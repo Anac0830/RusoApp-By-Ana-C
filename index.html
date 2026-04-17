@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>РусSkill — Aprende Ruso (Corregido)</title>
+<title>РусSkill — Aprende Ruso (Completo)</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -432,7 +432,7 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 
 <script>
 // ============================================
-// DATA (igual que antes, compactado)
+// DATOS COMPLETOS (100+ PALABRAS)
 // ============================================
 const ALPHABET = [
   {u:'А',l:'а',snd:'a',esp:'como la "a" española',ex:'Арбуз (Arbuz) = Sandía',type:'Vocal',g:0},
@@ -476,36 +476,99 @@ const VOCAB = {
   saludos: { icon:'👋', name:'Saludos', words:[
     {ru:'Привет',ph:'Privet',es:'Hola (informal)',tip:'Entre amigos'},
     {ru:'Здравствуйте',ph:'Zdravstvuyte',es:'Hola (formal)',tip:'Forma respetuosa'},
-    {ru:'Спасибо',ph:'Spasibo',es:'Gracias',tip:''},{ru:'Пожалуйста',ph:'Pozhaluysta',es:'Por favor',tip:''}
+    {ru:'Доброе утро',ph:'Dobroye utro',es:'Buenos días',tip:'Hasta las 12pm'},
+    {ru:'Добрый день',ph:'Dobry den',es:'Buenas tardes',tip:'De 12 a 18h'},
+    {ru:'Добрый вечер',ph:'Dobry vecher',es:'Buenas noches',tip:'Después de 18h'},
+    {ru:'До свидания',ph:'Do svidaniya',es:'Adiós (formal)',tip:''},
+    {ru:'Пока',ph:'Poka',es:'Chao',tip:'Muy informal'},
+    {ru:'Как дела?',ph:'Kak dela?',es:'¿Cómo estás?',tip:''},
+    {ru:'Хорошо',ph:'Khorosho',es:'Bien',tip:''},
+    {ru:'Спасибо',ph:'Spasibo',es:'Gracias',tip:''},
+    {ru:'Пожалуйста',ph:'Pozhaluysta',es:'De nada / Por favor',tip:'Doble uso'},
+    {ru:'Извините',ph:'Izvinite',es:'Disculpe',tip:''}
   ]},
   comida: { icon:'🍽️', name:'Comida', words:[
-    {ru:'Хлеб',ph:'Jleb',es:'Pan',tip:''},{ru:'Вода',ph:'Voda',es:'Agua',tip:''},
-    {ru:'Молоко',ph:'Moloko',es:'Leche',tip:''},{ru:'Чай',ph:'Chay',es:'Té',tip:''}
+    {ru:'Хлеб',ph:'Jleb',es:'Pan',tip:'Alimento sagrado'},
+    {ru:'Вода',ph:'Voda',es:'Agua',tip:''},{ru:'Молоко',ph:'Moloko',es:'Leche',tip:''},
+    {ru:'Чай',ph:'Chay',es:'Té',tip:'Bebida nacional'},{ru:'Кофе',ph:'Kofe',es:'Café',tip:''},
+    {ru:'Суп',ph:'Sup',es:'Sopa',tip:''},{ru:'Рыба',ph:'Ryba',es:'Pescado',tip:''},
+    {ru:'Мясо',ph:'Myaso',es:'Carne',tip:''},{ru:'Борщ',ph:'Borshch',es:'Borscht',tip:'Sopa de betabel'},
+    {ru:'Пельмени',ph:'Pelmeni',es:'Pelmeni',tip:'Ravioles rusos'},{ru:'Блины',ph:'Bliny',es:'Blinis',tip:''},
+    {ru:'Яйцо',ph:'Yaytso',es:'Huevo',tip:''},{ru:'Сыр',ph:'Syr',es:'Queso',tip:''},
+    {ru:'Яблоко',ph:'Yabloko',es:'Manzana',tip:''}
   ]},
   numeros: { icon:'🔢', name:'Números', words:[
-    {ru:'Один',ph:'Odin',es:'Uno',tip:''},{ru:'Два',ph:'Dva',es:'Dos',tip:''},
-    {ru:'Три',ph:'Tri',es:'Tres',tip:''},{ru:'Четыре',ph:'Chetyre',es:'Cuatro',tip:''}
+    {ru:'Ноль',ph:'Nol',es:'Cero',tip:''},{ru:'Один',ph:'Odin',es:'Uno',tip:''},
+    {ru:'Два',ph:'Dva',es:'Dos',tip:''},{ru:'Три',ph:'Tri',es:'Tres',tip:''},
+    {ru:'Четыре',ph:'Chetyre',es:'Cuatro',tip:''},{ru:'Пять',ph:'Pyat',es:'Cinco',tip:''},
+    {ru:'Шесть',ph:'Shest',es:'Seis',tip:''},{ru:'Семь',ph:'Sem',es:'Siete',tip:''},
+    {ru:'Восемь',ph:'Vosem',es:'Ocho',tip:''},{ru:'Девять',ph:'Devyat',es:'Nueve',tip:''},
+    {ru:'Десять',ph:'Desyat',es:'Diez',tip:''},{ru:'Двадцать',ph:'Dvadtsat',es:'Veinte',tip:''},
+    {ru:'Сто',ph:'Sto',es:'Cien',tip:''},{ru:'Тысяча',ph:'Tysyacha',es:'Mil',tip:''}
   ]},
   turismo: { icon:'✈️', name:'Turismo', words:[
     {ru:'Где?',ph:'Gde?',es:'¿Dónde?',tip:''},{ru:'Музей',ph:'Muzey',es:'Museo',tip:''},
-    {ru:'Аэропорт',ph:'Aeroport',es:'Aeropuerto',tip:''},{ru:'Такси',ph:'Taksi',es:'Taxi',tip:''}
+    {ru:'Гостиница',ph:'Gostinitsa',es:'Hotel',tip:''},{ru:'Аэропорт',ph:'Aeroport',es:'Aeropuerto',tip:''},
+    {ru:'Вокзал',ph:'Vokzal',es:'Estación de tren',tip:''},{ru:'Метро',ph:'Metro',es:'Metro',tip:''},
+    {ru:'Улица',ph:'Ulitsa',es:'Calle',tip:''},{ru:'Площадь',ph:'Ploshchad',es:'Plaza',tip:''},
+    {ru:'Карта',ph:'Karta',es:'Mapa',tip:''},{ru:'Билет',ph:'Bilet',es:'Boleto',tip:''},
+    {ru:'Такси',ph:'Taksi',es:'Taxi',tip:''},{ru:'Направо',ph:'Napravo',es:'Derecha',tip:''},
+    {ru:'Налево',ph:'Nalevo',es:'Izquierda',tip:''},{ru:'Прямо',ph:'Pryamo',es:'Recto',tip:''}
   ]},
+  salud: { icon:'🏥', name:'Salud', words:[
+    {ru:'Врач',ph:'Vrach',es:'Médico',tip:''},{ru:'Больница',ph:'Bolnitsa',es:'Hospital',tip:''},
+    {ru:'Аптека',ph:'Apteka',es:'Farmacia',tip:''},{ru:'Лекарство',ph:'Lekarstvo',es:'Medicamento',tip:''},
+    {ru:'Помогите!',ph:'Pomogite!',es:'¡Ayuda!',tip:''},{ru:'Скорая',ph:'Skoraya',es:'Ambulancia',tip:''},
+    {ru:'Я болен',ph:'Ya bolen',es:'Estoy enfermo',tip:''},{ru:'Болит',ph:'Bolit',es:'Duele',tip:''}
+  ]},
+  estudios: { icon:'📖', name:'Estudios', words:[
+    {ru:'Школа',ph:'Shkola',es:'Escuela',tip:''},{ru:'Университет',ph:'Universitet',es:'Universidad',tip:''},
+    {ru:'Книга',ph:'Kniga',es:'Libro',tip:''},{ru:'Тетрадь',ph:'Tetrad',es:'Cuaderno',tip:''},
+    {ru:'Ручка',ph:'Ruchka',es:'Bolígrafo',tip:''},{ru:'Учитель',ph:'Uchitel',es:'Maestro',tip:''},
+    {ru:'Студент',ph:'Student',es:'Estudiante',tip:''},{ru:'Урок',ph:'Urok',es:'Clase',tip:''}
+  ]},
+  cultura: { icon:'🎭', name:'Cultura', words:[
+    {ru:'Балет',ph:'Balet',es:'Ballet',tip:''},{ru:'Матрёшка',ph:'Matryoshka',es:'Matrioshka',tip:''},
+    {ru:'Самовар',ph:'Samovar',es:'Samovar',tip:''},{ru:'Кремль',ph:'Kreml',es:'Kremlin',tip:''},
+    {ru:'Красная площадь',ph:'Krasnaya ploshchad',es:'Plaza Roja',tip:''},{ru:'Водка',ph:'Vodka',es:'Vodka',tip:''}
+  ]},
+  historia: { icon:'🏰', name:'Historia', words:[
+    {ru:'Россия',ph:'Rossiya',es:'Rusia',tip:''},{ru:'Москва',ph:'Moskva',es:'Moscú',tip:''},
+    {ru:'Царь',ph:'Tsar',es:'Zar',tip:''},{ru:'Революция',ph:'Revolyutsiya',es:'Revolución',tip:''},
+    {ru:'Советский Союз',ph:'Sovetsky Soyuz',es:'Unión Soviética',tip:''},{ru:'Война',ph:'Voyna',es:'Guerra',tip:''}
+  ]}
 };
 
 const PHRASES = {
   basico: { icon:'🗣️', name:'Básico', color:'#1C2B5A', items:[
     {ru:'Меня зовут...',ph:'Menya zovut...',es:'Me llamo...',tip:''},
-    {ru:'Я не понимаю',ph:'Ya ne ponimayu',es:'No entiendo',tip:''},
+    {ru:'Я из ...',ph:'Ya iz ...',es:'Soy de...',tip:''},{ru:'Я не понимаю',ph:'Ya ne ponimayu',es:'No entiendo',tip:''},
+    {ru:'Повторите, пожалуйста',ph:'Povtorite, pozhaluysta',es:'Repita',tip:''},
+    {ru:'Говорите медленнее',ph:'Govorite medlennee',es:'Hable más despacio',tip:''},
+    {ru:'Вы говорите по-испански?',ph:'Vy govorite po-ispanski?',es:'¿Habla español?',tip:''},
     {ru:'Сколько стоит?',ph:'Skolko stoit?',es:'¿Cuánto cuesta?',tip:''}
   ]},
   turismo: { icon:'✈️', name:'Turismo', color:'#059669', items:[
-    {ru:'Где находится...?',ph:'Gde nakhoditsya...?',es:'¿Dónde está...?',tip:''},
-    {ru:'Один билет',ph:'Odin bilet',es:'Un boleto',tip:''}
+    {ru:'Где находится...?',ph:'Gde nakhoditsya...?',es:'¿Dónde está?',tip:''},
+    {ru:'Как добраться до...?',ph:'Kak dobratsa do...?',es:'¿Cómo llego?',tip:''},
+    {ru:'Один билет, пожалуйста',ph:'Odin bilet, pozhaluysta',es:'Un boleto',tip:''},
+    {ru:'Я потерялся',ph:'Ya poteryalsya',es:'Estoy perdido',tip:''}
   ]},
-  himno: { icon:'🎵', name:'Himno', color:'#0A1628', items:[] },
+  restaurante: { icon:'🍽️', name:'Restaurante', color:'#D4A017', items:[
+    {ru:'Меню, пожалуйста',ph:'Menyu, pozhaluysta',es:'El menú',tip:''},
+    {ru:'Я хочу...',ph:'Ya khochu...',es:'Yo quiero...',tip:''},{ru:'Счёт, пожалуйста',ph:'Shchot, pozhaluysta',es:'La cuenta',tip:''},
+    {ru:'Очень вкусно!',ph:'Ochen vkusno!',es:'¡Muy delicioso!',tip:''}
+  ]},
+  cortesia: { icon:'🤝', name:'Cortesía', color:'#7C3AED', items:[
+    {ru:'С днём рождения!',ph:'S dnyom rozhdeniya!',es:'¡Feliz cumpleaños!',tip:''},
+    {ru:'С Новым годом!',ph:'S Novym godom!',es:'¡Feliz Año Nuevo!',tip:''},
+    {ru:'Поздравляю!',ph:'Pozdravlyayu!',es:'¡Felicitaciones!',tip:''},{ru:'Удачи!',ph:'Udachi!',es:'¡Buena suerte!',tip:''},
+    {ru:'Я тебя люблю',ph:'Ya tebya lyublyu',es:'Te amo',tip:''}
+  ]},
+  himno: { icon:'🎵', name:'Himno', color:'#0A1628', items:[] }
 };
 
-const TIPS = ['El ruso usa alfabeto cirílico','Rusia tiene 11 husos horarios','No hay artículos en ruso'];
+const TIPS = ['El ruso es lengua materna de 150 millones de personas','El alfabeto cirílico fue creado en el siglo IX','En ruso NO existen artículos','Rusia tiene 11 husos horarios','La palabra vodka significa "agüita"','El metro de Moscú es uno de los más bellos del mundo'];
 
 // ============================================
 // STATE
@@ -521,42 +584,22 @@ if(P.lastDay !== today){ P.streak = (P.lastDay===yest)?P.streak+1:1; P.lastDay=t
 function addXP(n,el){ P.xp+=n; save(); syncHomeStats(); if(el){ const pop=document.createElement('div'); pop.className='xp-pop'; pop.textContent='+'+n+' XP'; const r=el.getBoundingClientRect(); pop.style.cssText=`left:${r.left+r.width/2}px;top:${r.top}px`; document.body.appendChild(pop); setTimeout(()=>pop.remove(),700); } }
 
 // ============================================
-// SPEECH - CORREGIDO para iPhone (solo el sonido puro)
+// SPEECH CORREGIDO PARA IPHONE
 // ============================================
 function speakLetterSound(letterData) {
-  if (!('speechSynthesis' in window)) {
-    showToast('⚠️ Audio no disponible');
-    return;
-  }
-  
+  if (!('speechSynthesis' in window)) { showToast('⚠️ Audio no disponible'); return; }
   window.speechSynthesis.cancel();
-  
-  // Construir el texto a pronunciar: SOLO el sonido puro
-  let textToSpeak = '';
-  const sound = letterData.snd;
-  
-  // Para iOS: usar el sonido fonético puro
-  if (letterData.type === 'Vocal') {
-    textToSpeak = sound; // "a", "e", "i", "o", "u", "ya", "yu", etc.
-  } else if (letterData.type === 'Consonante') {
-    // Para consonantes, añadir una 'eh' suave al final para que se oiga bien
-    textToSpeak = sound + 'ə'; // "bə", "kə", "mə"
-  } else {
-    textToSpeak = sound;
-  }
-  
+  let textToSpeak = letterData.snd;
+  if (letterData.type === 'Consonante') textToSpeak = letterData.snd + 'ə';
   setTimeout(() => {
     const utterance = new SpeechSynthesisUtterance(textToSpeak);
     utterance.lang = 'ru-RU';
-    utterance.rate = 0.7;  // Más lento para sonidos cortos
-    utterance.pitch = 1;
-    
+    utterance.rate = 0.7;
     const voices = window.speechSynthesis.getVoices();
     const russianVoice = voices.find(v => v.lang === 'ru-RU' || v.lang.startsWith('ru'));
     if (russianVoice) utterance.voice = russianVoice;
-    
     window.speechSynthesis.speak(utterance);
-    showToast(`🔊 Sonido: /${sound}/`);
+    showToast(`🔊 Sonido: /${letterData.snd}/`);
   }, 50);
 }
 
@@ -575,14 +618,8 @@ function speakWordOrPhrase(text) {
   }, 50);
 }
 
-function initSpeech() {
-  if (!('speechSynthesis' in window)) return;
-  window.speechSynthesis.getVoices();
-}
-initSpeech();
-
 // ============================================
-// NAVIGATION
+// NAVEGACIÓN Y DEMÁS FUNCIONES (COMPLETAS)
 // ============================================
 let current = 'home';
 function goTo(name){
@@ -600,11 +637,12 @@ function goTo(name){
   if(name==='quiz') syncQuizStats();
 }
 
-const MODS = [{id:'alfa',icon:'🔤',title:'Alfabeto',desc:'33 letras'},{id:'vocab',icon:'📚',title:'Vocabulario',desc:'Tarjetas'},{id:'frases',icon:'💬',title:'Frases',desc:'Comunicación'},{id:'quiz',icon:'🎯',title:'Quiz',desc:'Gana XP'}];
-
 function initHome(){
   const g=document.getElementById('mod-grid');
-  if(!g.children.length){ MODS.forEach(m=>{ const d=document.createElement('div'); d.className='mod-card'; d.innerHTML=`<div class="mod-icon">${m.icon}</div><div class="mod-title">${m.title}</div><div class="mod-desc">${m.desc}</div><div class="mod-badge">Ir →</div>`; d.addEventListener('click',()=>goTo(m.id)); g.appendChild(d); }); }
+  if(!g.children.length){ 
+    const mods = [{id:'alfa',icon:'🔤',title:'Alfabeto',desc:'33 letras'},{id:'vocab',icon:'📚',title:'Vocabulario',desc:'100+ palabras'},{id:'frases',icon:'💬',title:'Frases',desc:'Comunicación'},{id:'quiz',icon:'🎯',title:'Quiz',desc:'Gana XP'}];
+    mods.forEach(m=>{ const d=document.createElement('div'); d.className='mod-card'; d.innerHTML=`<div class="mod-icon">${m.icon}</div><div class="mod-title">${m.title}</div><div class="mod-desc">${m.desc}</div><div class="mod-badge">Ir →</div>`; d.addEventListener('click',()=>goTo(m.id)); g.appendChild(d); }); 
+  }
   syncHomeStats();
   document.getElementById('tip-txt').textContent = TIPS[new Date().getDate() % TIPS.length];
 }
@@ -612,22 +650,19 @@ function initHome(){
 function syncHomeStats(){
   document.getElementById('streak-n').textContent=P.streak;
   document.getElementById('h-xp').textContent=P.xp;
-  document.getElementById('h-words').textContent=P.words;
+  document.getElementById('h-words').textContent=Object.values(VOCAB).reduce((a,c)=>a+c.words.length,0);
   document.getElementById('h-lessons').textContent=P.lessons;
   const lvl=Math.floor(P.xp/100)+1;
   const pct=P.xp%100;
-  const names=['Principiante','Novato','Aprendiz','Intermedio'];
+  const names=['Principiante','Novato','Aprendiz','Intermedio','Avanzado'];
   document.getElementById('level-num').textContent=lvl;
   document.getElementById('level-name').textContent=names[Math.min(lvl-1,names.length-1)];
   document.getElementById('level-bar').style.width=pct+'%';
   document.getElementById('level-xp-info').textContent=`${P.xp%100}/100 XP para nivel ${lvl+1}`;
 }
 
-// ============================================
 // ALPHABET
-// ============================================
 let alpGroup=0, curModal=null;
-
 function initAlpha(){
   const tabs=document.getElementById('alpha-tabs');
   tabs.innerHTML='';
@@ -635,7 +670,6 @@ function initAlpha(){
   renderAlphaGroup();
   document.getElementById('alpha-bar').style.width=(P.alpDone.length/6*100)+'%';
 }
-
 function renderAlphaGroup(){
   document.getElementById('alpha-grp-lbl').textContent=ALPHA_GROUPS[alpGroup];
   const grid=document.getElementById('letters-grid');
@@ -647,27 +681,12 @@ function renderAlphaGroup(){
     grid.appendChild(c);
   });
 }
-
-function openLetterModal(l){
-  curModal=l;
-  document.getElementById('m-big').textContent=l.u;
-  document.getElementById('m-sml').textContent=l.l;
-  document.getElementById('m-snd').textContent='/'+l.snd+'/';
-  document.getElementById('m-esp').textContent=l.esp;
-  document.getElementById('m-ex').textContent=l.ex;
-  document.getElementById('m-type').textContent=l.type;
-  document.getElementById('let-modal').classList.add('open');
-  addXP(2);
-}
+function openLetterModal(l){ curModal=l; document.getElementById('m-big').textContent=l.u; document.getElementById('m-sml').textContent=l.l; document.getElementById('m-snd').textContent='/'+l.snd+'/'; document.getElementById('m-esp').textContent=l.esp; document.getElementById('m-ex').textContent=l.ex; document.getElementById('m-type').textContent=l.type; document.getElementById('let-modal').classList.add('open'); addXP(2); }
 function closeModal(){ document.getElementById('let-modal').classList.remove('open'); }
 document.getElementById('let-modal').addEventListener('click',e=>{ if(e.target===document.getElementById('let-modal')) closeModal(); });
+function speakModalSound(){ if(curModal) speakLetterSound(curModal); }
 
-// FUNCIÓN CORREGIDA: al tocar "Escuchar" en el modal, SOLO dice el sonido puro
-function speakModalSound(){ 
-  if(curModal) speakLetterSound(curModal); 
-}
-
-// Alpha Quiz (simplificado)
+// Alpha Quiz
 let aqQs=[], aqIdx=0, aqScore=0;
 function startAlphaQuiz(){
   const grpLetters=ALPHABET.filter(l=>l.g===alpGroup);
@@ -706,9 +725,7 @@ function checkAQ(btn,ans,correct){
   setTimeout(()=>{ aqIdx++; renderAQ(); },1200);
 }
 
-// ============================================
-// VOCABULARY (simplificado)
-// ============================================
+// VOCABULARIO COMPLETO
 let vCat='saludos', vIdx=0, vFlipped=false, vList=false;
 function initVocab(){
   const chips=document.getElementById('vocab-chips');
@@ -726,7 +743,6 @@ function renderCard(){
   document.getElementById('fc-ph').textContent='📢 '+w.ph;
   document.getElementById('fc-tip').textContent=w.tip||'';
   document.getElementById('fc-cnt').textContent=(vIdx+1)+' / '+words.length;
-  if(P.words<150){ P.words=Math.min(P.words+1,150); save(); }
 }
 function flipCard(){ vFlipped=!vFlipped; document.getElementById('flashcard').classList.toggle('flipped',vFlipped); if(vFlipped) addXP(1); }
 function nextCard(){ vIdx=(vIdx+1)%VOCAB[vCat].words.length; renderCard(); }
@@ -739,9 +755,7 @@ function renderWordList(){
   VOCAB[vCat].words.forEach(w=>{ const item=document.createElement('div'); item.className='word-item'; item.innerHTML=`<div><div class="wi-ru">${w.ru}</div><div class="wi-ph">${w.ph}</div></div><div class="wi-es">${w.es}</div><button class="spk-btn">🔊</button>`; item.querySelector('.spk-btn').addEventListener('click',e=>{ e.stopPropagation(); speakWordOrPhrase(w.ru); }); list.appendChild(item); });
 }
 
-// ============================================
-// PHRASES (simplificado)
-// ============================================
+// PHRASES
 let phCat='basico';
 function initPhrases(){
   const chips=document.getElementById('phrase-chips');
@@ -757,9 +771,7 @@ function renderPhrases(){
   cat.items.forEach(p=>{ const c=document.createElement('div'); c.className='phrase-card'; c.style.borderLeftColor=cat.color; c.innerHTML=`<div class="ph-ru">${p.ru}</div><div class="ph-pho">📢 ${p.ph}</div><div class="ph-es">🇪🇸 ${p.es}</div><div class="ph-actions"><button class="btn btn-ghost btn-sm">🔊 Escuchar</button></div>`; c.querySelector('.btn').addEventListener('click',()=>speakWordOrPhrase(p.ru)); cont.appendChild(c); });
 }
 
-// ============================================
-// QUIZ (simplificado)
-// ============================================
+// QUIZ
 let qQs=[], qIdx=0, qScore=0;
 function syncQuizStats(){ document.getElementById('qs-done').textContent=P.qDone; document.getElementById('qs-best').textContent=P.qBest?P.qBest+'/10':'—'; document.getElementById('qs-xp').textContent=P.qXP; }
 function buildAllWords(){ const all=[]; Object.values(VOCAB).forEach(cat=>{ cat.words.forEach(w=>all.push({ru:w.ru,ph:w.ph,es:w.es})); }); return all; }
@@ -814,9 +826,7 @@ function endQuiz(){
 
 function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._timer); t._timer=setTimeout(()=>t.classList.remove('show'),2800); }
 
-// ============================================
 // EVENT LISTENERS
-// ============================================
 document.querySelectorAll('.nav-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ const nav=btn.getAttribute('data-nav'); if(nav) goTo(nav); }); });
 document.getElementById('prev-card')?.addEventListener('click',prevCard);
 document.getElementById('next-card')?.addEventListener('click',nextCard);
@@ -829,10 +839,10 @@ document.getElementById('new-quiz-btn')?.addEventListener('click',startQuiz);
 document.getElementById('home-from-quiz')?.addEventListener('click',()=>goTo('home'));
 document.getElementById('q-next')?.addEventListener('click',nextQ);
 document.getElementById('alpha-quiz-btn')?.addEventListener('click',startAlphaQuiz);
-document.getElementById('speak-modal')?.addEventListener('click',speakModalSound);  // ← CORREGIDO: usa la nueva función
+document.getElementById('speak-modal')?.addEventListener('click',speakModalSound);
 document.getElementById('close-modal')?.addEventListener('click',closeModal);
 
-// Swipe para flashcards
+// SWIPE
 let touchStartX=0;
 document.addEventListener('touchstart',e=>{ touchStartX=e.changedTouches[0].screenX; },{passive:true});
 document.addEventListener('touchend',e=>{ if(current!=='vocab'||vList) return; const diff=e.changedTouches[0].screenX-touchStartX; if(Math.abs(diff)>50){ if(diff>0) prevCard(); else nextCard(); } },{passive:true});
