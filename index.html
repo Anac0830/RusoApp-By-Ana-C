@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>РусSkill — Aprende Ruso</title>
+<title>РусSkill — Aprende Ruso (Corregido)</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -21,18 +20,15 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   overflow:hidden;-webkit-font-smoothing:antialiased}
 #app{max-width:480px;margin:0 auto;height:100vh;display:flex;flex-direction:column;position:relative}
 
-/* ── SCREENS ─────────────────────────────── */
 .screen{display:none;flex:1;overflow-y:auto;padding-bottom:calc(var(--nav) + 16px);
   -webkit-overflow-scrolling:touch;animation:fadeIn .22s ease}
 .screen.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── BOTTOM NAV ───────────────────────────── */
 .nav-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);
   width:100%;max-width:480px;height:var(--nav);background:#fff;
   border-top:1px solid var(--border);display:flex;align-items:center;
-  justify-content:space-around;z-index:100;
-  box-shadow:0 -4px 20px rgba(0,0,0,.07)}
+  justify-content:space-around;z-index:100;box-shadow:0 -4px 20px rgba(0,0,0,.07)}
 .nav-btn{display:flex;flex-direction:column;align-items:center;gap:3px;
   padding:8px 6px;border:none;background:none;cursor:pointer;border-radius:14px;
   transition:all .18s;flex:1;-webkit-tap-highlight-color:transparent;min-width:0}
@@ -41,7 +37,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 .nav-btn.active{background:#EEF2FF}
 .nav-btn.active .nl{color:var(--navy)}
 
-/* ── HEADER ───────────────────────────────── */
 .hdr{padding:20px 18px 16px;position:sticky;top:0;z-index:10;background:inherit}
 .hdr h1{font-size:21px;font-weight:800;color:var(--ink)}
 .hdr p{font-size:13px;color:var(--muted);margin-top:2px}
@@ -53,7 +48,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 .card{background:var(--card);border-radius:var(--radius);
   box-shadow:var(--shadow);padding:18px;margin:0 14px 12px}
 
-/* ── BTN ──────────────────────────────────── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:14px 20px;border-radius:13px;border:none;font-size:14px;font-weight:700;
   cursor:pointer;transition:all .15s;-webkit-tap-highlight-color:transparent;width:100%}
@@ -64,20 +58,15 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 .btn-green{background:var(--green);color:#fff}
 .btn-sm{padding:9px 16px;font-size:13px;width:auto;border-radius:10px}
 
-/* ── TOAST ────────────────────────────────── */
 .toast{position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-90px);
   background:var(--ink);color:#fff;padding:11px 20px;border-radius:12px;
   font-size:13px;font-weight:600;z-index:999;transition:transform .28s cubic-bezier(.34,1.56,.64,1);
   max-width:calc(100% - 28px);text-align:center;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0)}
 
-/* ── XP POP ───────────────────────────────── */
 @keyframes xpUp{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-48px) scale(1.3)}}
 .xp-pop{position:fixed;font-size:16px;font-weight:900;color:var(--green);pointer-events:none;animation:xpUp .7s ease forwards;z-index:998}
 
-/* ══════════════════════════════════════════
-   HOME
-══════════════════════════════════════════ */
 .hero{background:linear-gradient(145deg,var(--navy) 0%,#2d4a9e 100%);
   color:#fff;padding:28px 20px 24px;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
@@ -105,9 +94,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   border-radius:0 14px 14px 0;padding:14px 16px;margin:0 14px 12px}
 .tip-card p{font-size:13px;color:var(--ink2);line-height:1.6}
 
-/* ══════════════════════════════════════════
-   ALPHABET
-══════════════════════════════════════════ */
 .alpha-hdr{background:linear-gradient(135deg,var(--red),#9B1D24);
   color:#fff;padding:20px 18px 16px;position:sticky;top:0;z-index:10}
 .tabs-scroll{display:flex;gap:8px;padding:12px 14px;overflow-x:auto;scrollbar-width:none}
@@ -126,7 +112,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 .let-snd{font-size:11px;color:var(--muted);margin-top:4px;font-weight:600}
 .let-ex{font-size:10px;color:var(--green);margin-top:2px;font-weight:700}
 
-/* Modal */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;
   align-items:flex-end;justify-content:center}
 .overlay.open{display:flex}
@@ -141,12 +126,8 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 .info-lbl{font-size:12px;color:var(--muted);font-weight:700;width:96px;flex-shrink:0}
 .info-val{font-size:14px;font-weight:700;color:var(--ink)}
 
-/* Alpha quiz inline */
 .aq-section{padding:0 14px 8px;display:none}
 
-/* ══════════════════════════════════════════
-   VOCABULARY
-══════════════════════════════════════════ */
 .vocab-hdr{background:linear-gradient(135deg,#1C2B5A,#2d4a9e);
   color:#fff;padding:20px 18px 16px;position:sticky;top:0;z-index:10}
 .chips-row{display:flex;gap:8px;padding:12px 14px;overflow-x:auto;scrollbar-width:none}
@@ -157,7 +138,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   display:flex;align-items:center;gap:4px}
 .chip.active{background:var(--navy);color:#fff}
 
-/* Flashcard */
 .fc-wrap{perspective:900px;padding:0 14px;margin:4px 0}
 .flashcard{width:100%;height:196px;position:relative;transform-style:preserve-3d;
   transition:transform .46s cubic-bezier(.34,1.1,.64,1);cursor:pointer}
@@ -181,7 +161,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 .fc-count{font-size:14px;font-weight:800;color:var(--muted)}
 .fc-btns{display:flex;gap:8px;padding:0 14px}
 
-/* Word list */
 .word-list{padding:0 14px}
 .word-item{background:#fff;border-radius:13px;padding:13px 14px;margin-bottom:8px;
   display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,.06);
@@ -194,9 +173,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   color:var(--navy);font-size:14px;cursor:pointer;display:flex;align-items:center;
   justify-content:center;flex-shrink:0;-webkit-tap-highlight-color:transparent}
 
-/* ══════════════════════════════════════════
-   PHRASES
-══════════════════════════════════════════ */
 .phrases-hdr{background:linear-gradient(135deg,#5B21B6,#7C3AED);
   color:#fff;padding:20px 18px 16px;position:sticky;top:0;z-index:10}
 .phrase-card{background:#fff;border-radius:16px;padding:16px;margin:0 14px 10px;
@@ -207,7 +183,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 .ph-tip{font-size:12px;color:var(--orange);margin-top:5px}
 .ph-actions{margin-top:11px;display:flex;gap:8px}
 
-/* Anthem */
 .anthem{background:linear-gradient(145deg,#0A1628,#1C2B5A);color:#fff;
   border-radius:18px;padding:22px 18px;margin:0 14px 12px}
 .anthem-title{font-size:14px;font-weight:700;opacity:.7;text-align:center;
@@ -217,9 +192,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 .ant-es{font-size:12px;opacity:.5;margin-bottom:14px}
 .anthem .btn{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);margin-top:6px}
 
-/* ══════════════════════════════════════════
-   QUIZ
-══════════════════════════════════════════ */
 .quiz-hdr{background:linear-gradient(135deg,#CC2936,#9B1D24);
   color:#fff;padding:20px 18px 16px;position:sticky;top:0;z-index:10}
 .q-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px}
@@ -246,7 +218,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 .feedback.correct{background:#D1FAE5;color:#065F46}
 .feedback.wrong{background:#FEE2E2;color:#991B1B}
 
-/* Result */
 .result{display:none;text-align:center;padding:30px 20px}
 .result.show{display:block}
 .result-emoji{font-size:70px}
@@ -256,15 +227,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 .result-sub{font-size:14px;color:var(--muted);margin-top:4px;margin-bottom:20px}
 .result-btns{display:flex;flex-direction:column;gap:10px;padding:0 14px}
 
-/* Progress screen */
-.prog-hdr{background:linear-gradient(135deg,#D4A017,#B8860B);
-  color:#fff;padding:20px 18px 16px;position:sticky;top:0;z-index:10}
-.prog-topic-card{background:#fff;border-radius:16px;padding:14px 16px;
-  margin:0 14px 10px;box-shadow:var(--shadow);display:flex;align-items:center;gap:14px}
-.pt-icon{font-size:28px}
-.pt-name{font-size:15px;font-weight:700}
-.pt-meta{font-size:12px;color:var(--muted);margin-top:2px}
-.pt-check{margin-left:auto;font-size:20px}
 .level-ring{width:88px;height:88px;border-radius:50%;background:linear-gradient(145deg,var(--navy),var(--red));
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   color:#fff;font-weight:900;margin:0 auto;box-shadow:0 4px 16px rgba(0,0,0,.2)}
@@ -275,10 +237,9 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
 <body>
 <div id="app">
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
-<!-- ══ HOME ══════════════════════════════════ -->
+<!-- HOME -->
 <div class="screen active" id="screen-home">
   <div class="hero">
     <span class="hero-flag">🇷🇺</span>
@@ -304,7 +265,7 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   </div>
 </div>
 
-<!-- ══ ALPHABET ════════════════════════════ -->
+<!-- ALPHABET -->
 <div class="screen" id="screen-alfa">
   <div class="alpha-hdr hdr">
     <h1>🔤 Alfabeto Cirílico</h1>
@@ -327,7 +288,7 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   </div>
 </div>
 
-<!-- ══ VOCABULARY ══════════════════════════ -->
+<!-- VOCABULARY -->
 <div class="screen" id="screen-vocab">
   <div class="vocab-hdr hdr">
     <h1>📚 Vocabulario</h1>
@@ -366,7 +327,7 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   </div>
 </div>
 
-<!-- ══ PHRASES ══════════════════════════════ -->
+<!-- PHRASES -->
 <div class="screen" id="screen-frases">
   <div class="phrases-hdr hdr">
     <h1>💬 Frases & Temas</h1>
@@ -376,13 +337,12 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   <div id="phrases-content"></div>
 </div>
 
-<!-- ══ QUIZ ══════════════════════════════════ -->
+<!-- QUIZ -->
 <div class="screen" id="screen-quiz">
   <div class="quiz-hdr hdr">
     <h1>🎯 Quiz Interactivo</h1>
     <p>Pon a prueba lo que has aprendido</p>
   </div>
-
   <div id="quiz-start">
     <div class="card" style="text-align:center;margin-top:8px">
       <div style="font-size:52px;margin-bottom:12px">🏆</div>
@@ -408,7 +368,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
       </div>
     </div>
   </div>
-
   <div id="quiz-game" style="display:none">
     <div style="padding:14px 14px 0">
       <div class="q-meta">
@@ -428,7 +387,6 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
       <button class="btn btn-primary" id="q-next" style="display:none">Siguiente →</button>
     </div>
   </div>
-
   <div class="result" id="quiz-result">
     <div class="result-emoji" id="r-emoji">🎉</div>
     <h2 id="r-title">¡Excelente!</h2>
@@ -442,7 +400,7 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   </div>
 </div>
 
-<!-- ══ LETTER MODAL ═══════════════════════ -->
+<!-- LETTER MODAL -->
 <div class="overlay" id="let-modal">
   <div class="sheet">
     <div class="handle"></div>
@@ -461,7 +419,7 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   </div>
 </div>
 
-<!-- ══ BOTTOM NAV ═══════════════════════════ -->
+<!-- BOTTOM NAV -->
 <nav class="nav-bar">
   <button class="nav-btn active" data-nav="home">🏠<span class="nl">Inicio</span></button>
   <button class="nav-btn" data-nav="alfa">🔤<span class="nl">Alfabeto</span></button>
@@ -470,13 +428,12 @@ html,body{height:100%;background:var(--bg);color:var(--ink);
   <button class="nav-btn" data-nav="quiz">🎯<span class="nl">Quiz</span></button>
 </nav>
 
-</div><!-- #app -->
+</div>
 
 <script>
-// ════════════════════════════════════════════
-//  DATA
-// ════════════════════════════════════════════
-
+// ============================================
+// DATA (igual que antes, compactado)
+// ============================================
 const ALPHABET = [
   {u:'А',l:'а',snd:'a',esp:'como la "a" española',ex:'Арбуз (Arbuz) = Sandía',type:'Vocal',g:0},
   {u:'Е',l:'е',snd:'ye',esp:'como "ye"',ex:'Ель (Yel) = Abeto',type:'Vocal',g:0},
@@ -513,750 +470,313 @@ const ALPHABET = [
   {u:'Ь',l:'ь',snd:"'",esp:'signo blando (suaviza)',ex:"Соль (Sol') = Sal",type:'Signo',g:5},
 ];
 
-const ALPHA_GROUPS = [
-  'Grupo 1 — Similares al español',
-  'Grupo 2 — Suenan familiar',
-  'Grupo 3 — ¡Cuidado! Se leen distinto',
-  'Grupo 4 — Sonidos especiales',
-  'Grupo 5 — Combinaciones',
-  'Grupo 6 — Vocales & signos',
-];
+const ALPHA_GROUPS = ['Grupo 1 — Similares','Grupo 2 — Suenan familiar','Grupo 3 — Cuidado','Grupo 4 — Especiales','Grupo 5 — Combinaciones','Grupo 6 — Vocales y signos'];
 
 const VOCAB = {
-  saludos: {
-    icon:'👋', name:'Saludos',
-    words:[
-      {ru:'Привет',ph:'Privet',es:'Hola (informal)',tip:'Entre amigos'},
-      {ru:'Здравствуйте',ph:'Zdravstvuyte',es:'Hola (formal)',tip:'Forma respetuosa'},
-      {ru:'Доброе утро',ph:'Dobroye utro',es:'Buenos días',tip:'Hasta las 12pm'},
-      {ru:'Добрый день',ph:'Dobry den',es:'Buenas tardes',tip:'De 12 a 18h'},
-      {ru:'Добрый вечер',ph:'Dobry vecher',es:'Buenas noches',tip:'Después de 18h'},
-      {ru:'До свидания',ph:'Do svidaniya',es:'Adiós (formal)',tip:''},
-      {ru:'Пока',ph:'Poka',es:'Chao / Hasta luego',tip:'Muy informal'},
-      {ru:'Как дела?',ph:'Kak dela?',es:'¿Cómo estás?',tip:''},
-      {ru:'Хорошо',ph:'Khorosho',es:'Bien',tip:''},
-      {ru:'Спасибо',ph:'Spasibo',es:'Gracias',tip:''},
-      {ru:'Пожалуйста',ph:'Pozhaluysta',es:'De nada / Por favor',tip:'Doble uso'},
-      {ru:'Извините',ph:'Izvinite',es:'Disculpe / Perdón',tip:''},
-    ]
-  },
-  comida: {
-    icon:'🍽️', name:'Comida',
-    words:[
-      {ru:'Хлеб',ph:'Jleb',es:'Pan',tip:'Alimento sagrado ruso'},
-      {ru:'Вода',ph:'Voda',es:'Agua',tip:''},
-      {ru:'Молоко',ph:'Moloko',es:'Leche',tip:''},
-      {ru:'Чай',ph:'Chay',es:'Té',tip:'Bebida nacional de Rusia'},
-      {ru:'Кофе',ph:'Kofe',es:'Café',tip:''},
-      {ru:'Суп',ph:'Sup',es:'Sopa',tip:'Base de la cocina rusa'},
-      {ru:'Рыба',ph:'Ryba',es:'Pescado',tip:''},
-      {ru:'Мясо',ph:'Myaso',es:'Carne',tip:''},
-      {ru:'Борщ',ph:'Borshch',es:'Borscht',tip:'Sopa de betabel — ícono ruso'},
-      {ru:'Пельмени',ph:'Pelmeni',es:'Pelmeni',tip:'Como ravioles rusos'},
-      {ru:'Блины',ph:'Bliny',es:'Blinis',tip:'Crepas rusas tradicionales'},
-      {ru:'Яйцо',ph:'Yaytso',es:'Huevo',tip:''},
-      {ru:'Сыр',ph:'Syr',es:'Queso',tip:''},
-      {ru:'Яблоко',ph:'Yabloko',es:'Manzana',tip:''},
-    ]
-  },
-  numeros: {
-    icon:'🔢', name:'Números',
-    words:[
-      {ru:'Ноль',ph:'Nol',es:'Cero (0)',tip:''},
-      {ru:'Один',ph:'Odin',es:'Uno (1)',tip:''},
-      {ru:'Два',ph:'Dva',es:'Dos (2)',tip:''},
-      {ru:'Три',ph:'Tri',es:'Tres (3)',tip:''},
-      {ru:'Четыре',ph:'Chetyre',es:'Cuatro (4)',tip:''},
-      {ru:'Пять',ph:'Pyat',es:'Cinco (5)',tip:''},
-      {ru:'Шесть',ph:'Shest',es:'Seis (6)',tip:''},
-      {ru:'Семь',ph:'Sem',es:'Siete (7)',tip:''},
-      {ru:'Восемь',ph:'Vosem',es:'Ocho (8)',tip:''},
-      {ru:'Девять',ph:'Devyat',es:'Nueve (9)',tip:''},
-      {ru:'Десять',ph:'Desyat',es:'Diez (10)',tip:''},
-      {ru:'Двадцать',ph:'Dvadtsat',es:'Veinte (20)',tip:''},
-      {ru:'Сто',ph:'Sto',es:'Cien (100)',tip:''},
-      {ru:'Тысяча',ph:'Tysyacha',es:'Mil (1000)',tip:''},
-    ]
-  },
-  turismo: {
-    icon:'✈️', name:'Turismo',
-    words:[
-      {ru:'Где?',ph:'Gde?',es:'¿Dónde?',tip:'Pregunta clave para turistas'},
-      {ru:'Музей',ph:'Muzey',es:'Museo',tip:''},
-      {ru:'Гостиница',ph:'Gostinitsa',es:'Hotel',tip:''},
-      {ru:'Аэропорт',ph:'Aeroport',es:'Aeropuerto',tip:'¡Igual que en español!'},
-      {ru:'Вокзал',ph:'Vokzal',es:'Estación de tren',tip:''},
-      {ru:'Метро',ph:'Metro',es:'Metro / Subte',tip:'El de Moscú es el más bello'},
-      {ru:'Улица',ph:'Ulitsa',es:'Calle',tip:''},
-      {ru:'Площадь',ph:'Ploshchad',es:'Plaza',tip:'Красная пл. = Plaza Roja'},
-      {ru:'Карта',ph:'Karta',es:'Mapa',tip:''},
-      {ru:'Билет',ph:'Bilet',es:'Boleto / Ticket',tip:''},
-      {ru:'Такси',ph:'Taksi',es:'Taxi',tip:'¡Igual que en español!'},
-      {ru:'Направо',ph:'Napravo',es:'A la derecha',tip:''},
-      {ru:'Налево',ph:'Nalevo',es:'A la izquierda',tip:''},
-      {ru:'Прямо',ph:'Pryamo',es:'Recto / Derecho',tip:''},
-    ]
-  },
-  salud: {
-    icon:'🏥', name:'Salud',
-    words:[
-      {ru:'Врач',ph:'Vrach',es:'Médico',tip:''},
-      {ru:'Больница',ph:'Bolnitsa',es:'Hospital',tip:''},
-      {ru:'Аптека',ph:'Apteka',es:'Farmacia',tip:''},
-      {ru:'Лекарство',ph:'Lekarstvo',es:'Medicamento',tip:''},
-      {ru:'Помогите!',ph:'Pomogite!',es:'¡Ayuda!',tip:'Frase de emergencia'},
-      {ru:'Скорая',ph:'Skoraya',es:'Ambulancia',tip:'Скорая помощь'},
-      {ru:'Я болен',ph:'Ya bolen',es:'Estoy enfermo',tip:'Ya bolna = mujer'},
-      {ru:'Болит',ph:'Bolit',es:'Duele',tip:'Голова болит = me duele la cabeza'},
-      {ru:'Температура',ph:'Temperatura',es:'Fiebre / Temperatura',tip:''},
-      {ru:'Вызовите врача',ph:'Vyzovite vracha',es:'Llame al médico',tip:'Urgencia'},
-    ]
-  },
-  estudios: {
-    icon:'📖', name:'Estudios',
-    words:[
-      {ru:'Школа',ph:'Shkola',es:'Escuela',tip:''},
-      {ru:'Университет',ph:'Universitet',es:'Universidad',tip:''},
-      {ru:'Книга',ph:'Kniga',es:'Libro',tip:''},
-      {ru:'Тетрадь',ph:'Tetrad',es:'Cuaderno',tip:''},
-      {ru:'Ручка',ph:'Ruchka',es:'Bolígrafo',tip:'También = manija'},
-      {ru:'Учитель',ph:'Uchitel',es:'Maestro',tip:'Учительница = maestra'},
-      {ru:'Студент',ph:'Student',es:'Estudiante',tip:'¡Igual que en español!'},
-      {ru:'Урок',ph:'Urok',es:'Clase / Lección',tip:''},
-      {ru:'Домашнее задание',ph:'Domashneye zadaniye',es:'Tarea',tip:'"Trabajo en casa"'},
-      {ru:'Экзамен',ph:'Ekzamen',es:'Examen',tip:'Fácil de reconocer'},
-      {ru:'Оценка',ph:'Otsenka',es:'Calificación / Nota',tip:''},
-      {ru:'Перемена',ph:'Peremena',es:'Recreo',tip:''},
-    ]
-  },
-  matematicas: {
-    icon:'📐', name:'Matemáticas',
-    words:[
-      {ru:'Математика',ph:'Matematika',es:'Matemáticas',tip:'¡Fácil de recordar!'},
-      {ru:'Плюс',ph:'Plyus',es:'Más (+)',tip:''},
-      {ru:'Минус',ph:'Minus',es:'Menos (-)',tip:''},
-      {ru:'Равно',ph:'Ravno',es:'Igual (=)',tip:''},
-      {ru:'Умножить',ph:'Umnozhit',es:'Multiplicar (×)',tip:''},
-      {ru:'Разделить',ph:'Razdelit',es:'Dividir (÷)',tip:''},
-      {ru:'Число',ph:'Chislo',es:'Número',tip:''},
-      {ru:'Сумма',ph:'Summa',es:'Suma',tip:'¡Igual que en español!'},
-      {ru:'Задача',ph:'Zadacha',es:'Problema / Ejercicio',tip:''},
-      {ru:'Ответ',ph:'Otvet',es:'Respuesta',tip:''},
-      {ru:'Треугольник',ph:'Treugolnik',es:'Triángulo',tip:'Три=tres + угол=ángulo'},
-      {ru:'Квадрат',ph:'Kvadrat',es:'Cuadrado',tip:''},
-    ]
-  },
-  cultura: {
-    icon:'🎭', name:'Cultura',
-    words:[
-      {ru:'Балет',ph:'Balet',es:'Ballet',tip:'Rusia = capital mundial del ballet'},
-      {ru:'Матрёшка',ph:'Matryoshka',es:'Matrioshka',tip:'Muñeca rusa tradicional'},
-      {ru:'Самовар',ph:'Samovar',es:'Samovar',tip:'Recipiente para hervir agua/té'},
-      {ru:'Кремль',ph:'Kreml',es:'Kremlin',tip:'Fortaleza del gobierno ruso'},
-      {ru:'Красная площадь',ph:'Krasnaya ploshchad',es:'Plaza Roja',tip:'Corazón de Moscú'},
-      {ru:'Большой театр',ph:'Bolshoy teatr',es:'Teatro Bolshói',tip:'El más famoso de Rusia'},
-      {ru:'Икона',ph:'Ikona',es:'Ícono religioso',tip:'Arte sagrado ortodoxo'},
-      {ru:'Масленица',ph:'Maslenitsa',es:'Maslenitsa',tip:'Carnaval ruso de primavera'},
-      {ru:'Водка',ph:'Vodka',es:'Vodka',tip:'De "вода" = agua. "Agüita"'},
-      {ru:'Тройка',ph:'Troyka',es:'Troika',tip:'Trineo de 3 caballos'},
-    ]
-  },
-  historia: {
-    icon:'🏰', name:'Historia',
-    words:[
-      {ru:'Россия',ph:'Rossiya',es:'Rusia',tip:'País más grande del mundo'},
-      {ru:'Москва',ph:'Moskva',es:'Moscú',tip:'Capital de Rusia'},
-      {ru:'Царь',ph:'Tsar',es:'Zar',tip:'Monarca/Emperador ruso'},
-      {ru:'Революция',ph:'Revolyutsiya',es:'Revolución',tip:'Revolución de 1917'},
-      {ru:'Советский Союз',ph:'Sovetsky Soyuz',es:'Unión Soviética',tip:'URSS 1922-1991'},
-      {ru:'Война',ph:'Voyna',es:'Guerra',tip:''},
-      {ru:'Победа',ph:'Pobeda',es:'Victoria',tip:'9 mayo = Día de la Victoria'},
-      {ru:'Пётр Великий',ph:'Pyotr Veliky',es:'Pedro el Grande',tip:'1672-1725, modernizó Rusia'},
-      {ru:'История',ph:'Istoriya',es:'Historia',tip:''},
-      {ru:'Памятник',ph:'Pamyatnik',es:'Monumento',tip:''},
-    ]
-  },
+  saludos: { icon:'👋', name:'Saludos', words:[
+    {ru:'Привет',ph:'Privet',es:'Hola (informal)',tip:'Entre amigos'},
+    {ru:'Здравствуйте',ph:'Zdravstvuyte',es:'Hola (formal)',tip:'Forma respetuosa'},
+    {ru:'Спасибо',ph:'Spasibo',es:'Gracias',tip:''},{ru:'Пожалуйста',ph:'Pozhaluysta',es:'Por favor',tip:''}
+  ]},
+  comida: { icon:'🍽️', name:'Comida', words:[
+    {ru:'Хлеб',ph:'Jleb',es:'Pan',tip:''},{ru:'Вода',ph:'Voda',es:'Agua',tip:''},
+    {ru:'Молоко',ph:'Moloko',es:'Leche',tip:''},{ru:'Чай',ph:'Chay',es:'Té',tip:''}
+  ]},
+  numeros: { icon:'🔢', name:'Números', words:[
+    {ru:'Один',ph:'Odin',es:'Uno',tip:''},{ru:'Два',ph:'Dva',es:'Dos',tip:''},
+    {ru:'Три',ph:'Tri',es:'Tres',tip:''},{ru:'Четыре',ph:'Chetyre',es:'Cuatro',tip:''}
+  ]},
+  turismo: { icon:'✈️', name:'Turismo', words:[
+    {ru:'Где?',ph:'Gde?',es:'¿Dónde?',tip:''},{ru:'Музей',ph:'Muzey',es:'Museo',tip:''},
+    {ru:'Аэропорт',ph:'Aeroport',es:'Aeropuerto',tip:''},{ru:'Такси',ph:'Taksi',es:'Taxi',tip:''}
+  ]},
 };
 
 const PHRASES = {
-  basico: {
-    icon:'🗣️', name:'Básico', color:'#1C2B5A',
-    items:[
-      {ru:'Меня зовут...',ph:'Menya zovut...',es:'Me llamo...',tip:'Literalmente: "A mí me llaman"'},
-      {ru:'Я из ...',ph:'Ya iz ...',es:'Soy de...',tip:'Ya iz Meksiki = Soy de México'},
-      {ru:'Я не понимаю',ph:'Ya ne ponimayu',es:'No entiendo',tip:'¡La frase más útil para principiantes!'},
-      {ru:'Повторите, пожалуйста',ph:'Povtorite, pozhaluysta',es:'Repita, por favor',tip:''},
-      {ru:'Говорите медленнее',ph:'Govorite medlennee',es:'Hable más despacio',tip:'Imprescindible'},
-      {ru:'Вы говорите по-испански?',ph:'Vy govorite po-ispanski?',es:'¿Habla usted español?',tip:''},
-      {ru:'Я учу русский',ph:'Ya uchu russky',es:'Estoy aprendiendo ruso',tip:'¡Dilo con orgullo! 😊'},
-      {ru:'Сколько стоит?',ph:'Skolko stoit?',es:'¿Cuánto cuesta?',tip:'Esencial para compras'},
-    ]
-  },
-  turismo: {
-    icon:'✈️', name:'Turismo', color:'#059669',
-    items:[
-      {ru:'Где находится...?',ph:'Gde nakhoditsya...?',es:'¿Dónde está...?',tip:'Para pedir direcciones'},
-      {ru:'Как добраться до...?',ph:'Kak dobratsa do...?',es:'¿Cómo llego a...?',tip:''},
-      {ru:'Один билет, пожалуйста',ph:'Odin bilet, pozhaluysta',es:'Un boleto, por favor',tip:''},
-      {ru:'Я потерялся',ph:'Ya poteryalsya',es:'Estoy perdido (h)',tip:'Ya poteryalas = mujer'},
-      {ru:'Вызовите полицию!',ph:'Vyzovite politsiyu!',es:'¡Llame a la policía!',tip:'Emergencia'},
-      {ru:'У вас есть свободные номера?',ph:'U vas yest svobodnye nomera?',es:'¿Tienen habitaciones libres?',tip:'En el hotel'},
-    ]
-  },
-  restaurante: {
-    icon:'🍽️', name:'Restaurante', color:'#D4A017',
-    items:[
-      {ru:'Меню, пожалуйста',ph:'Menyu, pozhaluysta',es:'El menú, por favor',tip:''},
-      {ru:'Я хочу...',ph:'Ya khochu...',es:'Yo quiero...',tip:'Agrega el plato después'},
-      {ru:'Счёт, пожалуйста',ph:'Shchot, pozhaluysta',es:'La cuenta, por favor',tip:''},
-      {ru:'Очень вкусно!',ph:'Ochen vkusno!',es:'¡Muy delicioso!',tip:'Elogio al cocinero'},
-      {ru:'Я вегетарианец',ph:'Ya vegetarianets',es:'Soy vegetariano',tip:'Vegetarianka para mujer'},
-      {ru:'Без мяса',ph:'Bez myasa',es:'Sin carne',tip:''},
-      {ru:'Приятного аппетита!',ph:'Priyatnogo appetita!',es:'¡Buen provecho!',tip:''},
-    ]
-  },
-  cortesia: {
-    icon:'🤝', name:'Cortesía', color:'#7C3AED',
-    items:[
-      {ru:'С днём рождения!',ph:'S dnyom rozhdeniya!',es:'¡Feliz cumpleaños!',tip:''},
-      {ru:'С Новым годом!',ph:'S Novym godom!',es:'¡Feliz Año Nuevo!',tip:'Celebración más importante en Rusia'},
-      {ru:'Поздравляю!',ph:'Pozdravlyayu!',es:'¡Felicitaciones!',tip:''},
-      {ru:'Удачи!',ph:'Udachi!',es:'¡Buena suerte!',tip:''},
-      {ru:'Будьте здоровы!',ph:'Budte zdorovy!',es:'¡Salud! (tras estornudo)',tip:''},
-      {ru:'Я тебя люблю',ph:'Ya tebya lyublyu',es:'Te amo / Te quiero',tip:'Muy especial en ruso'},
-    ]
-  },
-  salud: {
-    icon:'🏥', name:'Salud', color:'#CC2936',
-    items:[
-      {ru:'Вызовите скорую!',ph:'Vyzovite skoryuyu!',es:'¡Llame a la ambulancia!',tip:'Emergencia médica'},
-      {ru:'У меня болит...',ph:'U menya bolit...',es:'Me duele...',tip:'Agrega la parte del cuerpo'},
-      {ru:'Мне плохо',ph:'Mne plokho',es:'Me siento mal',tip:''},
-      {ru:'Я аллергик на...',ph:'Ya allerghik na...',es:'Soy alérgico a...',tip:''},
-      {ru:'Где ближайшая аптека?',ph:'Gde blizhayshaya apteka?',es:'¿Dónde hay una farmacia?',tip:''},
-    ]
-  },
-  himno: {
-    icon:'🎵', name:'Himno', color:'#0A1628',
-    items:[]
-  },
+  basico: { icon:'🗣️', name:'Básico', color:'#1C2B5A', items:[
+    {ru:'Меня зовут...',ph:'Menya zovut...',es:'Me llamo...',tip:''},
+    {ru:'Я не понимаю',ph:'Ya ne ponimayu',es:'No entiendo',tip:''},
+    {ru:'Сколько стоит?',ph:'Skolko stoit?',es:'¿Cuánto cuesta?',tip:''}
+  ]},
+  turismo: { icon:'✈️', name:'Turismo', color:'#059669', items:[
+    {ru:'Где находится...?',ph:'Gde nakhoditsya...?',es:'¿Dónde está...?',tip:''},
+    {ru:'Один билет',ph:'Odin bilet',es:'Un boleto',tip:''}
+  ]},
+  himno: { icon:'🎵', name:'Himno', color:'#0A1628', items:[] },
 };
 
-const TIPS = [
-  'El ruso es lengua materna de 150 millones de personas y uno de los 6 idiomas oficiales de la ONU.',
-  'La palabra "spútnik" (спутник) significa "compañero de viaje" — fue el primer satélite artificial (1957).',
-  'El alfabeto cirílico fue creado por el monje San Cirilo en el siglo IX para escribir lenguas eslavas.',
-  'En ruso NO existen artículos (el/la/un/una). ¡Eso lo hace un poco más fácil!',
-  'Rusia es el país más grande del mundo: abarca 11 husos horarios distintos.',
-  'La palabra "vodka" (водка) viene del diminutivo de "вода" (agua). Literalmente: "agüita".',
-  '"Matrioshka" viene de "Матрёна", nombre tradicional ruso femenino que significa "madre".',
-  'Moscú tiene uno de los sistemas de metro más bellos del mundo, con estaciones decoradas como palacios.',
-  'El ballet ruso es considerado el mejor del mundo: el Bolshói fue fundado en 1776.',
-  'Rusia tiene 29 sitios declarados Patrimonio de la Humanidad por la UNESCO.',
-];
+const TIPS = ['El ruso usa alfabeto cirílico','Rusia tiene 11 husos horarios','No hay artículos en ruso'];
 
-// ════════════════════════════════════════════
-//  STATE
-// ════════════════════════════════════════════
+// ============================================
+// STATE
+// ============================================
 let P = JSON.parse(localStorage.getItem('rskill_v2') || '{}');
-P = {
-  xp:       P.xp       ?? 0,
-  words:    P.words    ?? 0,
-  lessons:  P.lessons  ?? 0,
-  streak:   P.streak   ?? 0,
-  lastDay:  P.lastDay  ?? null,
-  alpDone:  P.alpDone  ?? [],
-  qDone:    P.qDone    ?? 0,
-  qBest:    P.qBest    ?? 0,
-  qXP:      P.qXP      ?? 0,
-};
-
+P = { xp: P.xp??0, words: P.words??0, lessons: P.lessons??0, streak: P.streak??0, lastDay: P.lastDay??null, alpDone: P.alpDone??[], qDone: P.qDone??0, qBest: P.qBest??0, qXP: P.qXP??0 };
 function save(){ localStorage.setItem('rskill_v2', JSON.stringify(P)); }
 
-// Streak
 const today = new Date().toDateString();
-const yest  = new Date(Date.now() - 86400000).toDateString();
-if (P.lastDay !== today) {
-  P.streak = (P.lastDay === yest) ? P.streak + 1 : 1;
-  P.lastDay = today;
-  save();
-}
+const yest = new Date(Date.now()-86400000).toDateString();
+if(P.lastDay !== today){ P.streak = (P.lastDay===yest)?P.streak+1:1; P.lastDay=today; save(); }
 
-function addXP(n, el){
-  P.xp += n;
-  save();
-  syncHomeStats();
-  if (el) {
-    const pop = document.createElement('div');
-    pop.className = 'xp-pop';
-    pop.textContent = '+' + n + ' XP';
-    const r = el.getBoundingClientRect();
-    pop.style.cssText = `left:${r.left + r.width/2}px;top:${r.top}px`;
-    document.body.appendChild(pop);
-    setTimeout(() => pop.remove(), 700);
-  }
-}
+function addXP(n,el){ P.xp+=n; save(); syncHomeStats(); if(el){ const pop=document.createElement('div'); pop.className='xp-pop'; pop.textContent='+'+n+' XP'; const r=el.getBoundingClientRect(); pop.style.cssText=`left:${r.left+r.width/2}px;top:${r.top}px`; document.body.appendChild(pop); setTimeout(()=>pop.remove(),700); } }
 
-// ════════════════════════════════════════════
-//  SPEECH (mejorado para iOS)
-// ════════════════════════════════════════════
-let speechInitialized = false;
-let speechUtterance = null;
-
-function initSpeech() {
+// ============================================
+// SPEECH - CORREGIDO para iPhone (solo el sonido puro)
+// ============================================
+function speakLetterSound(letterData) {
   if (!('speechSynthesis' in window)) {
-    console.log('Speech synthesis not supported');
-    return;
-  }
-  // En iOS necesitamos esto
-  if (!speechInitialized) {
-    speechInitialized = true;
-    // Precarga de voces
-    window.speechSynthesis.getVoices();
-    // Forzar inicialización silenciosa
-    const dummy = new SpeechSynthesisUtterance('');
-    dummy.lang = 'ru-RU';
-    window.speechSynthesis.speak(dummy);
-    window.speechSynthesis.cancel();
-  }
-}
-
-function speak(text) {
-  if (!('speechSynthesis' in window)) {
-    showToast('⚠️ Audio no disponible en este navegador');
+    showToast('⚠️ Audio no disponible');
     return;
   }
   
-  // Cancelar cualquier audio en curso
   window.speechSynthesis.cancel();
   
-  // Pequeño delay para iOS
+  // Construir el texto a pronunciar: SOLO el sonido puro
+  let textToSpeak = '';
+  const sound = letterData.snd;
+  
+  // Para iOS: usar el sonido fonético puro
+  if (letterData.type === 'Vocal') {
+    textToSpeak = sound; // "a", "e", "i", "o", "u", "ya", "yu", etc.
+  } else if (letterData.type === 'Consonante') {
+    // Para consonantes, añadir una 'eh' suave al final para que se oiga bien
+    textToSpeak = sound + 'ə'; // "bə", "kə", "mə"
+  } else {
+    textToSpeak = sound;
+  }
+  
   setTimeout(() => {
-    const utterance = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(textToSpeak);
     utterance.lang = 'ru-RU';
-    utterance.rate = 0.8;
+    utterance.rate = 0.7;  // Más lento para sonidos cortos
     utterance.pitch = 1;
     
-    // Intentar obtener voz rusa
     const voices = window.speechSynthesis.getVoices();
     const russianVoice = voices.find(v => v.lang === 'ru-RU' || v.lang.startsWith('ru'));
     if (russianVoice) utterance.voice = russianVoice;
     
-    utterance.onend = () => {};
-    utterance.onerror = (e) => {
-      console.log('Speech error:', e);
-    };
-    
+    window.speechSynthesis.speak(utterance);
+    showToast(`🔊 Sonido: /${sound}/`);
+  }, 50);
+}
+
+function speakWordOrPhrase(text) {
+  if (!('speechSynthesis' in window)) { showToast('⚠️ Audio no disponible'); return; }
+  window.speechSynthesis.cancel();
+  setTimeout(() => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ru-RU';
+    utterance.rate = 0.8;
+    const voices = window.speechSynthesis.getVoices();
+    const russianVoice = voices.find(v => v.lang === 'ru-RU' || v.lang.startsWith('ru'));
+    if (russianVoice) utterance.voice = russianVoice;
     window.speechSynthesis.speak(utterance);
     showToast('🔊 Reproduciendo...');
   }, 50);
 }
 
-// Inicializar speech al cargar
-initSpeech();
-// iOS necesita este evento
-if ('speechSynthesis' in window) {
-  window.speechSynthesis.onvoiceschanged = function() {
-    console.log('Voices loaded');
-  };
+function initSpeech() {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.getVoices();
 }
+initSpeech();
 
-// ════════════════════════════════════════════
-//  NAVIGATION
-// ════════════════════════════════════════════
+// ============================================
+// NAVIGATION
+// ============================================
 let current = 'home';
 function goTo(name){
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('screen-' + name).classList.add('active');
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('screen-'+name).classList.add('active');
   const targetBtn = document.querySelector(`.nav-btn[data-nav="${name}"]`);
-  if (targetBtn) targetBtn.classList.add('active');
-  document.getElementById('screen-' + name).scrollTop = 0;
+  if(targetBtn) targetBtn.classList.add('active');
+  document.getElementById('screen-'+name).scrollTop = 0;
   current = name;
-  if (name === 'home')   initHome();
-  if (name === 'alfa')   initAlpha();
-  if (name === 'vocab')  initVocab();
-  if (name === 'frases') initPhrases();
-  if (name === 'quiz')   syncQuizStats();
+  if(name==='home') initHome();
+  if(name==='alfa') initAlpha();
+  if(name==='vocab') initVocab();
+  if(name==='frases') initPhrases();
+  if(name==='quiz') syncQuizStats();
 }
 
-// ════════════════════════════════════════════
-//  HOME
-// ════════════════════════════════════════════
-const MODS = [
-  {id:'alfa',   icon:'🔤', title:'Alfabeto',    desc:'33 letras cirílicas'},
-  {id:'vocab',  icon:'📚', title:'Vocabulario', desc:'Tarjetas interactivas'},
-  {id:'frases', icon:'💬', title:'Frases',      desc:'Comunicación real'},
-  {id:'quiz',   icon:'🎯', title:'Quiz',        desc:'Gana XP y sube de nivel'},
-];
+const MODS = [{id:'alfa',icon:'🔤',title:'Alfabeto',desc:'33 letras'},{id:'vocab',icon:'📚',title:'Vocabulario',desc:'Tarjetas'},{id:'frases',icon:'💬',title:'Frases',desc:'Comunicación'},{id:'quiz',icon:'🎯',title:'Quiz',desc:'Gana XP'}];
 
 function initHome(){
-  const g = document.getElementById('mod-grid');
-  if (!g.children.length) {
-    MODS.forEach(m => {
-      const d = document.createElement('div');
-      d.className = 'mod-card';
-      d.innerHTML = `<div class="mod-icon">${m.icon}</div><div class="mod-title">${m.title}</div><div class="mod-desc">${m.desc}</div><div class="mod-badge" id="mb-${m.id}">Ir →</div>`;
-      d.addEventListener('click', () => goTo(m.id));
-      g.appendChild(d);
-    });
-  }
+  const g=document.getElementById('mod-grid');
+  if(!g.children.length){ MODS.forEach(m=>{ const d=document.createElement('div'); d.className='mod-card'; d.innerHTML=`<div class="mod-icon">${m.icon}</div><div class="mod-title">${m.title}</div><div class="mod-desc">${m.desc}</div><div class="mod-badge">Ir →</div>`; d.addEventListener('click',()=>goTo(m.id)); g.appendChild(d); }); }
   syncHomeStats();
   document.getElementById('tip-txt').textContent = TIPS[new Date().getDate() % TIPS.length];
 }
 
 function syncHomeStats(){
-  document.getElementById('streak-n').textContent = P.streak;
-  document.getElementById('h-xp').textContent = P.xp;
-  document.getElementById('h-words').textContent = P.words;
-  document.getElementById('h-lessons').textContent = P.lessons;
-  const lvl   = Math.floor(P.xp / 100) + 1;
-  const pct   = (P.xp % 100);
-  const names = ['Principiante','Novato','Aprendiz','Intermedio','Avanzado','Experto','Maestro'];
-  document.getElementById('level-num').textContent  = lvl;
-  document.getElementById('level-name').textContent = names[Math.min(lvl-1, names.length-1)];
-  document.getElementById('level-bar').style.width  = pct + '%';
-  document.getElementById('level-xp-info').textContent = `${P.xp % 100} / 100 XP para nivel ${lvl + 1}`;
-  const mb = document.getElementById('mb-alfa');
-  if (mb) mb.textContent = P.alpDone.length ? `${P.alpDone.length}/6 ✓` : 'Ir →';
+  document.getElementById('streak-n').textContent=P.streak;
+  document.getElementById('h-xp').textContent=P.xp;
+  document.getElementById('h-words').textContent=P.words;
+  document.getElementById('h-lessons').textContent=P.lessons;
+  const lvl=Math.floor(P.xp/100)+1;
+  const pct=P.xp%100;
+  const names=['Principiante','Novato','Aprendiz','Intermedio'];
+  document.getElementById('level-num').textContent=lvl;
+  document.getElementById('level-name').textContent=names[Math.min(lvl-1,names.length-1)];
+  document.getElementById('level-bar').style.width=pct+'%';
+  document.getElementById('level-xp-info').textContent=`${P.xp%100}/100 XP para nivel ${lvl+1}`;
 }
 
-// ════════════════════════════════════════════
-//  ALPHABET
-// ════════════════════════════════════════════
-let alpGroup = 0;
-let curModal = null;
+// ============================================
+// ALPHABET
+// ============================================
+let alpGroup=0, curModal=null;
 
 function initAlpha(){
-  const tabs = document.getElementById('alpha-tabs');
-  tabs.innerHTML = '';
-  ALPHA_GROUPS.forEach((g, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'tab-pill' + (i === alpGroup ? ' active' : '') + (P.alpDone.includes(i) ? ' done' : '');
-    btn.textContent = (P.alpDone.includes(i) ? '✓ ' : '') + 'G' + (i+1);
-    btn.addEventListener('click', () => { alpGroup = i; document.getElementById('aq-section').style.display='none'; initAlpha(); });
-    tabs.appendChild(btn);
-  });
+  const tabs=document.getElementById('alpha-tabs');
+  tabs.innerHTML='';
+  ALPHA_GROUPS.forEach((g,i)=>{ const btn=document.createElement('button'); btn.className='tab-pill'+(i===alpGroup?' active':'')+(P.alpDone.includes(i)?' done':''); btn.textContent=(P.alpDone.includes(i)?'✓ ':'')+'G'+(i+1); btn.addEventListener('click',()=>{ alpGroup=i; document.getElementById('aq-section').style.display='none'; initAlpha(); }); tabs.appendChild(btn); });
   renderAlphaGroup();
-  document.getElementById('alpha-bar').style.width = (P.alpDone.length / 6 * 100) + '%';
+  document.getElementById('alpha-bar').style.width=(P.alpDone.length/6*100)+'%';
 }
 
 function renderAlphaGroup(){
-  document.getElementById('alpha-grp-lbl').textContent = ALPHA_GROUPS[alpGroup];
-  const grid = document.getElementById('letters-grid');
-  grid.innerHTML = '';
-  ALPHABET.filter(l => l.g === alpGroup).forEach(l => {
-    const c = document.createElement('div');
-    c.className = 'let-card';
-    const bEl = document.createElement('div'); bEl.className = 'let-big'; bEl.textContent = l.u;
-    const sEl = document.createElement('div'); sEl.className = 'let-sm';  sEl.textContent = l.l;
-    const nEl = document.createElement('div'); nEl.className = 'let-snd'; nEl.textContent = '/'+l.snd+'/';
-    const eEl = document.createElement('div'); eEl.className = 'let-ex';  eEl.textContent = l.ex.split('(')[0].trim();
-    c.append(bEl,sEl,nEl,eEl);
-    c.addEventListener('click', () => openLetterModal(l));
+  document.getElementById('alpha-grp-lbl').textContent=ALPHA_GROUPS[alpGroup];
+  const grid=document.getElementById('letters-grid');
+  grid.innerHTML='';
+  ALPHABET.filter(l=>l.g===alpGroup).forEach(l=>{
+    const c=document.createElement('div'); c.className='let-card';
+    c.innerHTML=`<div class="let-big">${l.u}</div><div class="let-sm">${l.l}</div><div class="let-snd">/${l.snd}/</div><div class="let-ex">${l.ex.split('(')[0].trim()}</div>`;
+    c.addEventListener('click',()=>openLetterModal(l));
     grid.appendChild(c);
   });
 }
 
 function openLetterModal(l){
-  curModal = l;
-  document.getElementById('m-big').textContent  = l.u;
-  document.getElementById('m-sml').textContent  = l.l;
-  document.getElementById('m-snd').textContent  = '/'+l.snd+'/';
-  document.getElementById('m-esp').textContent  = l.esp;
-  document.getElementById('m-ex').textContent   = l.ex;
-  document.getElementById('m-type').textContent = l.type;
+  curModal=l;
+  document.getElementById('m-big').textContent=l.u;
+  document.getElementById('m-sml').textContent=l.l;
+  document.getElementById('m-snd').textContent='/'+l.snd+'/';
+  document.getElementById('m-esp').textContent=l.esp;
+  document.getElementById('m-ex').textContent=l.ex;
+  document.getElementById('m-type').textContent=l.type;
   document.getElementById('let-modal').classList.add('open');
   addXP(2);
 }
 function closeModal(){ document.getElementById('let-modal').classList.remove('open'); }
-document.getElementById('let-modal').addEventListener('click', e => { if(e.target===document.getElementById('let-modal')) closeModal(); });
-function speakModal(){ if(curModal) speak(curModal.u); }
+document.getElementById('let-modal').addEventListener('click',e=>{ if(e.target===document.getElementById('let-modal')) closeModal(); });
 
-// Alpha Quiz
+// FUNCIÓN CORREGIDA: al tocar "Escuchar" en el modal, SOLO dice el sonido puro
+function speakModalSound(){ 
+  if(curModal) speakLetterSound(curModal); 
+}
+
+// Alpha Quiz (simplificado)
 let aqQs=[], aqIdx=0, aqScore=0;
 function startAlphaQuiz(){
-  const grpLetters = ALPHABET.filter(l=>l.g===alpGroup);
-  aqQs = grpLetters.map(l=>{
-    const wrong = ALPHABET.filter(x=>x.u!==l.u).sort(()=>Math.random()-.5).slice(0,3).map(x=>x.snd);
-    return {letter:l, answers:[...wrong,l.snd].sort(()=>Math.random()-.5), correct:l.snd};
-  }).sort(()=>Math.random()-.5).slice(0,Math.min(5,grpLetters.length));
+  const grpLetters=ALPHABET.filter(l=>l.g===alpGroup);
+  aqQs=grpLetters.map(l=>{ const wrong=ALPHABET.filter(x=>x.u!==l.u).sort(()=>Math.random()-.5).slice(0,3).map(x=>x.snd); return {letter:l, answers:[...wrong,l.snd].sort(()=>Math.random()-.5), correct:l.snd}; }).sort(()=>Math.random()-.5).slice(0,Math.min(5,grpLetters.length));
   aqIdx=0; aqScore=0;
-  const sec = document.getElementById('aq-section');
+  const sec=document.getElementById('aq-section');
   sec.style.display='block';
   sec.scrollIntoView({behavior:'smooth'});
   renderAQ();
 }
-
 function renderAQ(){
-  const sec = document.getElementById('aq-section');
+  const sec=document.getElementById('aq-section');
   if(aqIdx>=aqQs.length){
-    const earned = aqScore*5;
-    sec.innerHTML = `
-      <div style="background:linear-gradient(135deg,var(--green),#047857);border-radius:20px;padding:24px;text-align:center;color:#fff;margin-bottom:10px">
-        <div style="font-size:52px">🎉</div>
-        <h3 style="font-size:20px;font-weight:900;margin-top:10px">¡Quiz completado!</h3>
-        <p style="margin-top:8px;font-size:15px">${aqScore}/${aqQs.length} correctas · +${earned} XP</p>
-      </div>
-      <button class="btn btn-red" id="restart-alpha-quiz">🔄 Repetir</button>
-      <button class="btn btn-ghost" style="margin-top:8px" id="close-alpha-quiz">Cerrar</button>
-    `;
-    document.getElementById('restart-alpha-quiz')?.addEventListener('click', startAlphaQuiz);
-    document.getElementById('close-alpha-quiz')?.addEventListener('click', () => sec.style.display='none');
+    const earned=aqScore*5;
+    sec.innerHTML=`<div style="background:linear-gradient(135deg,var(--green),#047857);border-radius:20px;padding:24px;text-align:center;color:#fff;margin-bottom:10px"><div style="font-size:52px">🎉</div><h3 style="font-size:20px;font-weight:900;margin-top:10px">¡Quiz completado!</h3><p style="margin-top:8px;font-size:15px">${aqScore}/${aqQs.length} correctas · +${earned} XP</p></div><button class="btn btn-red" id="restart-alpha-quiz">🔄 Repetir</button><button class="btn btn-ghost" style="margin-top:8px" id="close-alpha-quiz">Cerrar</button>`;
+    document.getElementById('restart-alpha-quiz')?.addEventListener('click',startAlphaQuiz);
+    document.getElementById('close-alpha-quiz')?.addEventListener('click',()=>sec.style.display='none');
     if(!P.alpDone.includes(alpGroup)){ P.alpDone.push(alpGroup); P.lessons++; }
-    addXP(earned + 20);
-    save();
+    addXP(earned+20); save();
     document.getElementById('alpha-bar').style.width=(P.alpDone.length/6*100)+'%';
-    showToast('🎉 Grupo completado! +' + (earned+20) + ' XP');
+    showToast('🎉 Grupo completado! +'+(earned+20)+' XP');
     return;
   }
-  const q = aqQs[aqIdx];
-  document.getElementById('aq-text').textContent = q.letter.u + ' ' + q.letter.l;
+  const q=aqQs[aqIdx];
+  document.getElementById('aq-text').textContent=q.letter.u+' '+q.letter.l;
   document.getElementById('aq-fb').className='feedback';
-  const opts = document.getElementById('aq-opts');
+  const opts=document.getElementById('aq-opts');
   opts.innerHTML='';
-  q.answers.forEach(a=>{
-    const b=document.createElement('button');
-    b.className='opt';
-    b.textContent='/'+a+'/';
-    b.addEventListener('click',()=>checkAQ(b,a,q.correct));
-    opts.appendChild(b);
-  });
+  q.answers.forEach(a=>{ const b=document.createElement('button'); b.className='opt'; b.textContent='/'+a+'/'; b.addEventListener('click',()=>checkAQ(b,a,q.correct)); opts.appendChild(b); });
 }
-
 function checkAQ(btn,ans,correct){
   document.querySelectorAll('#aq-opts .opt').forEach(b=>b.classList.add('disabled'));
-  const fb = document.getElementById('aq-fb');
-  if(ans===correct){
-    btn.classList.add('correct');
-    fb.className='feedback show correct';
-    fb.textContent='✅ ¡Correcto! /'+correct+'/';
-    aqScore++;
-    addXP(5, btn);
-  } else {
-    btn.classList.add('wrong');
-    document.querySelectorAll('#aq-opts .opt').forEach(b=>{ if(b.textContent==='/'+correct+'/') b.classList.add('correct'); });
-    fb.className='feedback show wrong';
-    fb.textContent='❌ Era /'+correct+'/';
-  }
-  setTimeout(()=>{ aqIdx++; renderAQ(); }, 1200);
+  const fb=document.getElementById('aq-fb');
+  if(ans===correct){ btn.classList.add('correct'); fb.className='feedback show correct'; fb.textContent='✅ ¡Correcto! /'+correct+'/'; aqScore++; addXP(5,btn); }
+  else{ btn.classList.add('wrong'); document.querySelectorAll('#aq-opts .opt').forEach(b=>{ if(b.textContent==='/'+correct+'/') b.classList.add('correct'); }); fb.className='feedback show wrong'; fb.textContent='❌ Era /'+correct+'/'; }
+  setTimeout(()=>{ aqIdx++; renderAQ(); },1200);
 }
 
-// ════════════════════════════════════════════
-//  VOCABULARY
-// ════════════════════════════════════════════
+// ============================================
+// VOCABULARY (simplificado)
+// ============================================
 let vCat='saludos', vIdx=0, vFlipped=false, vList=false;
-
 function initVocab(){
-  const chips = document.getElementById('vocab-chips');
+  const chips=document.getElementById('vocab-chips');
   chips.innerHTML='';
-  Object.entries(VOCAB).forEach(([k,cat])=>{
-    const b=document.createElement('button');
-    b.className='chip'+(k===vCat?' active':'');
-    b.textContent=cat.icon+' '+cat.name;
-    b.addEventListener('click',()=>{ vCat=k; vIdx=0; vFlipped=false; initVocab(); if(vList) renderWordList(); });
-    chips.appendChild(b);
-  });
+  Object.entries(VOCAB).forEach(([k,cat])=>{ const b=document.createElement('button'); b.className='chip'+(k===vCat?' active':''); b.textContent=cat.icon+' '+cat.name; b.addEventListener('click',()=>{ vCat=k; vIdx=0; vFlipped=false; initVocab(); if(vList) renderWordList(); }); chips.appendChild(b); });
   renderCard();
 }
-
 function renderCard(){
-  const words = VOCAB[vCat].words;
-  const w = words[vIdx];
-  const fc = document.getElementById('flashcard');
-  fc.classList.remove('flipped');
-  vFlipped=false;
-  document.getElementById('fc-ru').textContent = w.ru;
-  document.getElementById('fc-tr').textContent = w.es;
-  document.getElementById('fc-ph').textContent = '📢 '+w.ph;
-  document.getElementById('fc-tip').textContent = w.tip || '';
-  document.getElementById('fc-cnt').textContent = (vIdx+1)+' / '+words.length;
-  if(P.words < 150){ P.words = Math.min(P.words+1, 150); save(); }
+  const words=VOCAB[vCat].words;
+  const w=words[vIdx];
+  const fc=document.getElementById('flashcard');
+  fc.classList.remove('flipped'); vFlipped=false;
+  document.getElementById('fc-ru').textContent=w.ru;
+  document.getElementById('fc-tr').textContent=w.es;
+  document.getElementById('fc-ph').textContent='📢 '+w.ph;
+  document.getElementById('fc-tip').textContent=w.tip||'';
+  document.getElementById('fc-cnt').textContent=(vIdx+1)+' / '+words.length;
+  if(P.words<150){ P.words=Math.min(P.words+1,150); save(); }
 }
-
-function flipCard(){
-  vFlipped=!vFlipped;
-  document.getElementById('flashcard').classList.toggle('flipped',vFlipped);
-  if(vFlipped) addXP(1);
-}
+function flipCard(){ vFlipped=!vFlipped; document.getElementById('flashcard').classList.toggle('flipped',vFlipped); if(vFlipped) addXP(1); }
 function nextCard(){ vIdx=(vIdx+1)%VOCAB[vCat].words.length; renderCard(); }
 function prevCard(){ vIdx=(vIdx-1+VOCAB[vCat].words.length)%VOCAB[vCat].words.length; renderCard(); }
-function speakCurrent(){ speak(VOCAB[vCat].words[vIdx].ru); }
-
-function toggleList(){
-  vList=!vList;
-  document.getElementById('flashcard-mode').style.display=vList?'none':'block';
-  document.getElementById('list-mode').style.display=vList?'block':'none';
-  if(vList) renderWordList();
-}
-
+function speakCurrent(){ speakWordOrPhrase(VOCAB[vCat].words[vIdx].ru); }
+function toggleList(){ vList=!vList; document.getElementById('flashcard-mode').style.display=vList?'none':'block'; document.getElementById('list-mode').style.display=vList?'block':'none'; if(vList) renderWordList(); }
 function renderWordList(){
-  const list = document.getElementById('word-list');
+  const list=document.getElementById('word-list');
   list.innerHTML='';
-  VOCAB[vCat].words.forEach(w=>{
-    const item=document.createElement('div');
-    item.className='word-item';
-    const left=document.createElement('div');
-    const ruD=document.createElement('div'); ruD.className='wi-ru'; ruD.textContent=w.ru;
-    const phD=document.createElement('div'); phD.className='wi-ph'; phD.textContent=w.ph;
-    left.append(ruD,phD);
-    const esD=document.createElement('div'); esD.className='wi-es'; esD.textContent=w.es;
-    const sb=document.createElement('button'); sb.className='spk-btn'; sb.textContent='🔊';
-    sb.addEventListener('click',e=>{ e.stopPropagation(); speak(w.ru); });
-    item.append(left,esD,sb);
-    list.appendChild(item);
-  });
+  VOCAB[vCat].words.forEach(w=>{ const item=document.createElement('div'); item.className='word-item'; item.innerHTML=`<div><div class="wi-ru">${w.ru}</div><div class="wi-ph">${w.ph}</div></div><div class="wi-es">${w.es}</div><button class="spk-btn">🔊</button>`; item.querySelector('.spk-btn').addEventListener('click',e=>{ e.stopPropagation(); speakWordOrPhrase(w.ru); }); list.appendChild(item); });
 }
 
-// ════════════════════════════════════════════
-//  PHRASES
-// ════════════════════════════════════════════
+// ============================================
+// PHRASES (simplificado)
+// ============================================
 let phCat='basico';
-
 function initPhrases(){
   const chips=document.getElementById('phrase-chips');
   chips.innerHTML='';
-  Object.entries(PHRASES).forEach(([k,cat])=>{
-    const b=document.createElement('button');
-    b.className='chip'+(k===phCat?' active':'');
-    b.textContent=cat.icon+' '+cat.name;
-    b.addEventListener('click',()=>{ phCat=k; initPhrases(); });
-    chips.appendChild(b);
-  });
+  Object.entries(PHRASES).forEach(([k,cat])=>{ const b=document.createElement('button'); b.className='chip'+(k===phCat?' active':''); b.textContent=cat.icon+' '+cat.name; b.addEventListener('click',()=>{ phCat=k; initPhrases(); }); chips.appendChild(b); });
   renderPhrases();
 }
-
 function renderPhrases(){
   const cont=document.getElementById('phrases-content');
   cont.innerHTML='';
   const cat=PHRASES[phCat];
-
-  if(phCat==='himno'){
-    renderHymn(cont);
-    return;
-  }
-
-  cat.items.forEach((p,i)=>{
-    const c=document.createElement('div');
-    c.className='phrase-card';
-    c.style.borderLeftColor=cat.color;
-    const ruD=document.createElement('div'); ruD.className='ph-ru'; ruD.textContent=p.ru;
-    const phD=document.createElement('div'); phD.className='ph-pho'; phD.textContent='📢 '+p.ph;
-    const esD=document.createElement('div'); esD.className='ph-es'; esD.textContent='🇪🇸 '+p.es;
-    c.append(ruD,phD,esD);
-    if(p.tip){ const tD=document.createElement('div'); tD.className='ph-tip'; tD.textContent='💡 '+p.tip; c.appendChild(tD); }
-    const acts=document.createElement('div'); acts.className='ph-actions';
-    const sb=document.createElement('button'); sb.className='btn btn-ghost btn-sm'; sb.textContent='🔊 Escuchar';
-    sb.addEventListener('click',()=>speak(p.ru));
-    acts.appendChild(sb);
-    c.appendChild(acts);
-    cont.appendChild(c);
-  });
-
-  if(phCat==='basico'){
-    const note=document.createElement('div');
-    note.className='card';
-    note.innerHTML='<div style="font-size:18px;margin-bottom:8px">🏛️ Dato cultural</div><p style="font-size:13px;color:var(--ink2);line-height:1.7">El ruso usa el <strong>caso gramatical</strong> para indicar la función de las palabras. Tiene 6 casos distintos. Las palabras cambian su terminación según si son sujeto, objeto, destino, etc. ¡Por eso el orden de palabras es muy flexible!</p>';
-    cont.appendChild(note);
-  }
+  if(phCat==='himno'){ cont.innerHTML='<div class="anthem"><div class="anthem-title">🎵 Himno Ruso</div><div class="ant-ru">Россия — священная наша держава</div><div class="ant-es">Rusia — nuestra sagrada nación</div><button class="btn" id="play-himno">🔊 Escuchar</button></div>'; document.getElementById('play-himno')?.addEventListener('click',()=>speakWordOrPhrase('Россия священная наша держава')); return; }
+  cat.items.forEach(p=>{ const c=document.createElement('div'); c.className='phrase-card'; c.style.borderLeftColor=cat.color; c.innerHTML=`<div class="ph-ru">${p.ru}</div><div class="ph-pho">📢 ${p.ph}</div><div class="ph-es">🇪🇸 ${p.es}</div><div class="ph-actions"><button class="btn btn-ghost btn-sm">🔊 Escuchar</button></div>`; c.querySelector('.btn').addEventListener('click',()=>speakWordOrPhrase(p.ru)); cont.appendChild(c); });
 }
 
-function renderHymn(cont){
-  const card=document.createElement('div');
-  card.className='anthem';
-  const title=document.createElement('div'); title.className='anthem-title'; title.textContent='🎵 HIMNO NACIONAL RUSO — 1ª Estrofa';
-
-  const lines=[
-    {ru:'Россия — священная наша держава,',ph:'Rossiya — svyashchennaya nasha derzhava,',es:'Rusia — nuestra sagrada nación,'},
-    {ru:'Россия — любимая наша страна.',ph:'Rossiya — lyubimaya nasha strana.',es:'Rusia — nuestra amada patria.'},
-    {ru:'Могучая воля, великая слава —',ph:'Moguchaya volya, velikaya slava —',es:'Una voluntad poderosa, una gran gloria —'},
-    {ru:'Твоё достояние на все времена!',ph:'Tvoyo dostoyaniye na vse vremena!',es:'¡Tu legado para todos los tiempos!'},
-  ];
-
-  card.appendChild(title);
-  lines.forEach(l=>{
-    const ruD=document.createElement('div'); ruD.className='ant-ru'; ruD.textContent=l.ru;
-    const phD=document.createElement('div'); phD.className='ant-ph'; phD.textContent=l.ph;
-    const esD=document.createElement('div'); esD.className='ant-es'; esD.textContent=l.es;
-    card.append(ruD,phD,esD);
-  });
-
-  const sb=document.createElement('button'); sb.className='btn'; sb.textContent='🔊 Escuchar fragmento';
-  sb.addEventListener('click',()=>speak('Россия священная наша держава Россия любимая наша страна'));
-  card.appendChild(sb);
-  cont.appendChild(card);
-
-  const chorus=document.createElement('div');
-  chorus.className='anthem';
-  chorus.style.marginTop='0';
-  const ct=document.createElement('div'); ct.className='anthem-title'; ct.textContent='🎶 CORO';
-  const cLines=[
-    {ru:'Славься, Отечество наше свободное,',ph:'Slavsya, Otechestvo nashe svobodnoye,',es:'¡Gloria a ti, nuestra libre Patria,'},
-    {ru:'Братских народов союз вековой,',ph:'Bratskikh narodov soyuz vekovoy,',es:'Unión secular de pueblos hermanos!'},
-    {ru:'Предками данная мудрость народная!',ph:'Predkami dannaya mudrost narodnaya!',es:'¡Sabiduría ancestral del pueblo!'},
-    {ru:'Славься, страна! Мы гордимся тобой!',ph:'Slavsya, strana! My gordimsia toboy!',es:'¡Gloria al país! ¡Estamos orgullosos de ti!'},
-  ];
-  chorus.appendChild(ct);
-  cLines.forEach(l=>{
-    const ruD=document.createElement('div'); ruD.className='ant-ru'; ruD.textContent=l.ru;
-    const phD=document.createElement('div'); phD.className='ant-ph'; phD.textContent=l.ph;
-    const esD=document.createElement('div'); esD.className='ant-es'; esD.textContent=l.es;
-    chorus.append(ruD,phD,esD);
-  });
-  cont.appendChild(chorus);
-
-  const info=document.createElement('div');
-  info.className='card';
-  info.innerHTML='<div style="font-weight:800;margin-bottom:8px">📜 Sobre el himno</div><p style="font-size:13px;color:var(--ink2);line-height:1.7">El himno ruso actual fue adoptado en <strong>2000</strong> bajo la presidencia de Putin. Usa la música del himno soviético compuesta por <strong>Aleksandr Aleksándrov</strong> (1944), con nueva letra de <strong>Serguéi Mijalkov</strong>. Antes de 2000, el himno era una melodía sin letra de <strong>Mijaíl Glinka</strong>.</p>';
-  cont.appendChild(info);
-}
-
-// ════════════════════════════════════════════
-//  QUIZ
-// ════════════════════════════════════════════
+// ============================================
+// QUIZ (simplificado)
+// ============================================
 let qQs=[], qIdx=0, qScore=0;
-const Q_LEN=10;
-
-function syncQuizStats(){
-  document.getElementById('qs-done').textContent = P.qDone;
-  document.getElementById('qs-best').textContent = P.qBest ? P.qBest+'/10' : '—';
-  document.getElementById('qs-xp').textContent   = P.qXP;
-}
-
-function buildAllWords(){
-  const all=[];
-  Object.values(VOCAB).forEach(cat=>{
-    cat.words.forEach(w=>all.push({ru:w.ru,ph:w.ph,es:w.es}));
-  });
-  return all;
-}
-
+function syncQuizStats(){ document.getElementById('qs-done').textContent=P.qDone; document.getElementById('qs-best').textContent=P.qBest?P.qBest+'/10':'—'; document.getElementById('qs-xp').textContent=P.qXP; }
+function buildAllWords(){ const all=[]; Object.values(VOCAB).forEach(cat=>{ cat.words.forEach(w=>all.push({ru:w.ru,ph:w.ph,es:w.es})); }); return all; }
 function startQuiz(){
   const all=buildAllWords().sort(()=>Math.random()-.5);
-  qQs=[];
-  all.slice(0,Q_LEN).forEach(w=>{
-    const type=Math.random()>.5?'r2e':'e2r';
-    const wrong=all.filter(x=>x.ru!==w.ru).sort(()=>Math.random()-.5).slice(0,3);
-    if(type==='r2e'){
-      qQs.push({type:'🇷🇺 → 🇪🇸 Ruso → Español', q:w.ru, sub:w.ph, correct:w.es,
-        answers:[...wrong.map(x=>x.es),w.es].sort(()=>Math.random()-.5)});
-    } else {
-      qQs.push({type:'🇪🇸 → 🇷🇺 Español → Ruso', q:w.es, sub:'', correct:w.ru,
-        answers:[...wrong.map(x=>x.ru),w.ru].sort(()=>Math.random()-.5)});
-    }
-  });
+  qQs=[]; all.slice(0,10).forEach(w=>{ const type=Math.random()>.5?'r2e':'e2r'; const wrong=all.filter(x=>x.ru!==w.ru).sort(()=>Math.random()-.5).slice(0,3); if(type==='r2e'){ qQs.push({type:'Ruso → Español', q:w.ru, sub:w.ph, correct:w.es, answers:[...wrong.map(x=>x.es),w.es].sort(()=>Math.random()-.5)}); } else { qQs.push({type:'Español → Ruso', q:w.es, sub:'', correct:w.ru, answers:[...wrong.map(x=>x.ru),w.ru].sort(()=>Math.random()-.5)}); } });
   qIdx=0; qScore=0;
   document.getElementById('quiz-start').style.display='none';
   document.getElementById('quiz-result').classList.remove('show');
   document.getElementById('quiz-game').style.display='block';
   renderQ();
 }
-
 function renderQ(){
-  if(qIdx>=Q_LEN){ endQuiz(); return; }
+  if(qIdx>=10){ endQuiz(); return; }
   const q=qQs[qIdx];
-  document.getElementById('q-num').textContent=(qIdx+1)+'/'+Q_LEN;
-  document.getElementById('q-bar').style.width=((qIdx/Q_LEN)*100)+'%';
+  document.getElementById('q-num').textContent=(qIdx+1)+'/10';
+  document.getElementById('q-bar').style.width=((qIdx/10)*100)+'%';
   document.getElementById('q-score-live').textContent=qScore+' ✓';
   document.getElementById('q-type').textContent=q.type;
   document.getElementById('q-text').textContent=q.q;
@@ -1265,134 +785,59 @@ function renderQ(){
   document.getElementById('q-next').style.display='none';
   const grid=document.getElementById('q-opts');
   grid.innerHTML='';
-  q.answers.forEach(a=>{
-    const b=document.createElement('button'); b.className='opt'; b.textContent=a;
-    b.addEventListener('click',()=>checkQ(b,a,q.correct));
-    grid.appendChild(b);
-  });
+  q.answers.forEach(a=>{ const b=document.createElement('button'); b.className='opt'; b.textContent=a; b.addEventListener('click',()=>checkQ(b,a,q.correct)); grid.appendChild(b); });
 }
-
 function checkQ(btn,ans,correct){
   document.querySelectorAll('#q-opts .opt').forEach(b=>b.classList.add('disabled'));
   const fb=document.getElementById('q-fb');
-  if(ans===correct){
-    btn.classList.add('correct');
-    fb.className='feedback show correct';
-    fb.textContent='✅ ¡Correcto! ';
-    qScore++;
-    addXP(10, btn);
-  } else {
-    btn.classList.add('wrong');
-    document.querySelectorAll('#q-opts .opt').forEach(b=>{ if(b.textContent===correct) b.classList.add('correct'); });
-    fb.className='feedback show wrong';
-    fb.textContent='❌ Era: '+correct;
-  }
+  if(ans===correct){ btn.classList.add('correct'); fb.className='feedback show correct'; fb.textContent='✅ ¡Correcto!'; qScore++; addXP(10,btn); }
+  else{ btn.classList.add('wrong'); document.querySelectorAll('#q-opts .opt').forEach(b=>{ if(b.textContent===correct) b.classList.add('correct'); }); fb.className='feedback show wrong'; fb.textContent='❌ Era: '+correct; }
   document.getElementById('q-next').style.display='flex';
 }
 function nextQ(){ qIdx++; renderQ(); }
-
 function endQuiz(){
   document.getElementById('quiz-game').style.display='none';
-  const pct=qScore/Q_LEN;
-  let emoji,title,msg;
-  if(pct===1){   emoji='🏆'; title='¡Perfecto!';     msg='¡Maestro del ruso! Resultado impecable.'; }
-  else if(pct>=.8){emoji='🎉'; title='¡Excelente!';   msg='¡Dominas el ruso básico! Sigue así.'; }
-  else if(pct>=.6){emoji='👍'; title='¡Bien hecho!';  msg='Buen progreso. Un poco más de práctica.'; }
-  else if(pct>=.4){emoji='💪'; title='¡Sigue así!';   msg='El ruso requiere práctica. ¡No te rindas!'; }
-  else {           emoji='📚'; title='A estudiar más'; msg='Repasa el vocabulario y vuelve a intentarlo.'; }
-
-  document.getElementById('r-emoji').textContent   = emoji;
-  document.getElementById('r-title').textContent   = title;
-  document.getElementById('r-msg').textContent     = msg;
-  document.getElementById('r-score').textContent   = qScore+'/'+Q_LEN;
-  document.getElementById('r-xp').textContent      = '+' + (qScore*10) + ' XP ganados';
-
-  P.qDone++;
-  if(qScore>P.qBest) P.qBest=qScore;
-  P.qXP += qScore*10;
-  save(); syncQuizStats();
-
+  const pct=qScore/10; let emoji,title,msg;
+  if(pct===1){ emoji='🏆'; title='¡Perfecto!'; msg='¡Impecable!'; }
+  else if(pct>=.8){ emoji='🎉'; title='¡Excelente!'; msg='Muy bien'; }
+  else if(pct>=.6){ emoji='👍'; title='¡Bien hecho!'; msg='Buen progreso'; }
+  else{ emoji='📚'; title='A estudiar más'; msg='Repasa el vocabulario'; }
+  document.getElementById('r-emoji').textContent=emoji;
+  document.getElementById('r-title').textContent=title;
+  document.getElementById('r-msg').textContent=msg;
+  document.getElementById('r-score').textContent=qScore+'/10';
+  document.getElementById('r-xp').textContent='+'+(qScore*10)+' XP ganados';
+  P.qDone++; if(qScore>P.qBest) P.qBest=qScore; P.qXP+=qScore*10; save(); syncQuizStats();
   document.getElementById('quiz-result').classList.add('show');
-  showToast('🎯 '+qScore+'/'+Q_LEN+' — +' + (qScore*10) + ' XP');
+  showToast('🎯 '+qScore+'/10 — +'+(qScore*10)+' XP');
 }
 
-// ════════════════════════════════════════════
-//  TOAST
-// ════════════════════════════════════════════
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;
-  t.classList.add('show');
-  clearTimeout(t._timer);
-  t._timer=setTimeout(()=>t.classList.remove('show'),2800);
-}
+function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._timer); t._timer=setTimeout(()=>t.classList.remove('show'),2800); }
 
-// ════════════════════════════════════════════
-//  SWIPE (flashcards) - Mejorado
-// ════════════════════════════════════════════
-let touchStartX = 0;
-let touchEndX = 0;
+// ============================================
+// EVENT LISTENERS
+// ============================================
+document.querySelectorAll('.nav-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ const nav=btn.getAttribute('data-nav'); if(nav) goTo(nav); }); });
+document.getElementById('prev-card')?.addEventListener('click',prevCard);
+document.getElementById('next-card')?.addEventListener('click',nextCard);
+document.getElementById('speak-current')?.addEventListener('click',speakCurrent);
+document.getElementById('toggle-list')?.addEventListener('click',toggleList);
+document.getElementById('back-to-cards')?.addEventListener('click',toggleList);
+document.getElementById('flashcard')?.addEventListener('click',flipCard);
+document.getElementById('start-quiz-btn')?.addEventListener('click',startQuiz);
+document.getElementById('new-quiz-btn')?.addEventListener('click',startQuiz);
+document.getElementById('home-from-quiz')?.addEventListener('click',()=>goTo('home'));
+document.getElementById('q-next')?.addEventListener('click',nextQ);
+document.getElementById('alpha-quiz-btn')?.addEventListener('click',startAlphaQuiz);
+document.getElementById('speak-modal')?.addEventListener('click',speakModalSound);  // ← CORREGIDO: usa la nueva función
+document.getElementById('close-modal')?.addEventListener('click',closeModal);
 
-document.addEventListener('touchstart', (e) => {
-  touchStartX = e.changedTouches[0].screenX;
-}, {passive: true});
+// Swipe para flashcards
+let touchStartX=0;
+document.addEventListener('touchstart',e=>{ touchStartX=e.changedTouches[0].screenX; },{passive:true});
+document.addEventListener('touchend',e=>{ if(current!=='vocab'||vList) return; const diff=e.changedTouches[0].screenX-touchStartX; if(Math.abs(diff)>50){ if(diff>0) prevCard(); else nextCard(); } },{passive:true});
 
-document.addEventListener('touchend', (e) => {
-  if (current !== 'vocab' || vList) return;
-  touchEndX = e.changedTouches[0].screenX;
-  const diff = touchEndX - touchStartX;
-  if (Math.abs(diff) > 50) {
-    if (diff > 0) {
-      prevCard();
-    } else {
-      nextCard();
-    }
-  }
-}, {passive: true});
-
-// ════════════════════════════════════════════
-//  EVENT LISTENERS
-// ════════════════════════════════════════════
-
-// Navegación
-document.querySelectorAll('.nav-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const nav = btn.getAttribute('data-nav');
-    if (nav) goTo(nav);
-  });
-});
-
-// Botones de vocabulario
-document.getElementById('prev-card')?.addEventListener('click', prevCard);
-document.getElementById('next-card')?.addEventListener('click', nextCard);
-document.getElementById('speak-current')?.addEventListener('click', speakCurrent);
-document.getElementById('toggle-list')?.addEventListener('click', toggleList);
-document.getElementById('back-to-cards')?.addEventListener('click', toggleList);
-document.getElementById('flashcard')?.addEventListener('click', flipCard);
-
-// Quiz
-document.getElementById('start-quiz-btn')?.addEventListener('click', startQuiz);
-document.getElementById('new-quiz-btn')?.addEventListener('click', startQuiz);
-document.getElementById('home-from-quiz')?.addEventListener('click', () => goTo('home'));
-document.getElementById('q-next')?.addEventListener('click', nextQ);
-
-// Alfabeto
-document.getElementById('alpha-quiz-btn')?.addEventListener('click', startAlphaQuiz);
-
-// Modal
-document.getElementById('speak-modal')?.addEventListener('click', speakModal);
-document.getElementById('close-modal')?.addEventListener('click', closeModal);
-
-// ════════════════════════════════════════════
-//  INIT
-// ════════════════════════════════════════════
 initHome();
-
-// Asegurar que speech se inicialice con un toque (iOS necesita user interaction)
-document.body.addEventListener('touchstart', function once() {
-  initSpeech();
-  document.body.removeEventListener('touchstart', once);
-}, {once: true});
 </script>
 </body>
 </html>
